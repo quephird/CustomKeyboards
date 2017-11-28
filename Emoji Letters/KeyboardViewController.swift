@@ -101,7 +101,7 @@ class KeyboardViewController: UIInputViewController {
             }
         }
         
-        let spacebar = makeButton(" ")
+        let spacebar = makeButton("　")
         self.view.addSubview(spacebar)
         spacebar.leadingAnchor.constraint(equalTo: self.view.leadingAnchor, constant: 120.0).isActive = true
         spacebar.topAnchor.constraint(equalTo: letterButtonRows[2][0].bottomAnchor, constant: verticalSpaceBetweenButtons).isActive = true
