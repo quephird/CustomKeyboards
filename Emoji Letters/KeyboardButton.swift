@@ -38,4 +38,14 @@ class KeyboardButton : UIView {
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
     }
+
+    func playClick() {
+        UIDevice.current.playInputClick()
+    }
+}
+
+extension UIView : UIInputViewAudioFeedback {
+    public var enableInputClicksWhenVisible: Bool {
+        return true
+    }
 }
