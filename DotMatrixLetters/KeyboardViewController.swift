@@ -10,32 +10,36 @@ import UIKit
 
 class KeyboardViewController: UIInputViewController {
     var nextKeyboardButton: UIButton!
-    var keyboard : Keyboard!
-
-    let letterButtonKeyRows = [
-        ["🍳", "〰️", "📧", "®️", "✝️", "🈂️", "⛎", "ℹ️", "🅾️", "🅿️"],
-        ["🅰️", "⚡️", "🆔", "🎏", "🌀", "♓️", "🗾", "🎋", "👢"],
-        ["💤", "❌", "☪️", "♈️", "🅱️", "♑️", "♏️"]
-    ]
-
+    
+    // TODO: Need to centralize all magic numbers
+    // TODO: Need to make the keyboard height mutable and dependent on the orientation of the device
+    let verticalSpaceBetweenButtons = CGFloat(10.0)
+    let verticalMargin = CGFloat(10.0)
+    
     func makeButtonRow(_ buttonKeys: [String]) -> [UIView] {
-        let newButtons = buttonKeys.map { KeyboardButton($0, height: self.keyboard.buttonHeight) }
-        let additionalMargin = (keyboard.keyboardWidth - self.keyboard.leftMargin - self.keyboard.rightMargin)*(10.0-CGFloat(newButtons.count))/20.0
+        let buttonHeight = (CGFloat(226.0) - 2*self.verticalMargin - 3*self.verticalSpaceBetweenButtons)/4.0
+        
+        let newButtons = buttonKeys.map { KeyboardButton($0, height: buttonHeight) }
+        let spaceBetweenButtons = CGFloat(7.0)
+        let leftMargin = CGFloat(5.0)
+        let rightMargin = CGFloat(5.0)
+        let keyboardWidth = CGFloat(320.0)
+        let additionalMargin = (keyboardWidth - leftMargin - rightMargin)*(10.0-CGFloat(newButtons.count))/20.0
         
         for (index, button) in newButtons.enumerated() {
             self.view.addSubview(button)
             
             if index == 0 {
-                button.leadingAnchor.constraint(equalTo: self.view.leadingAnchor, constant: keyboard.leftMargin+additionalMargin).isActive = true
+                button.leadingAnchor.constraint(equalTo: self.view.leadingAnchor, constant: leftMargin+additionalMargin).isActive = true
             } else if index < newButtons.count-1 {
-                button.leadingAnchor.constraint(equalTo: newButtons[index-1].trailingAnchor, constant: self.keyboard.horizontalSpaceBetweenButtons).isActive = true
+                button.leadingAnchor.constraint(equalTo: newButtons[index-1].trailingAnchor, constant: spaceBetweenButtons).isActive = true
                 button.widthAnchor.constraint(equalTo: newButtons[index-1].widthAnchor).isActive = true
                 button.topAnchor.constraint(equalTo: newButtons[index-1].topAnchor).isActive = true
             } else {
-                button.leadingAnchor.constraint(equalTo: newButtons[index-1].trailingAnchor, constant: self.keyboard.horizontalSpaceBetweenButtons).isActive = true
+                button.leadingAnchor.constraint(equalTo: newButtons[index-1].trailingAnchor, constant: spaceBetweenButtons).isActive = true
                 button.widthAnchor.constraint(equalTo: newButtons[index-1].widthAnchor).isActive = true
                 button.topAnchor.constraint(equalTo: newButtons[index-1].topAnchor).isActive = true
-                button.trailingAnchor.constraint(equalTo: self.view.trailingAnchor, constant: -self.keyboard.rightMargin-additionalMargin).isActive = true
+                button.trailingAnchor.constraint(equalTo: self.view.trailingAnchor, constant: -rightMargin-additionalMargin).isActive = true
             }
         }
         
@@ -55,29 +59,31 @@ class KeyboardViewController: UIInputViewController {
         self.nextKeyboardButton.leftAnchor.constraint(equalTo: self.view.leftAnchor).isActive = true
         self.nextKeyboardButton.bottomAnchor.constraint(equalTo: self.view.bottomAnchor).isActive = true
     }
-    
-    func makeKeyboard() {
-        self.keyboard = Keyboard(self.letterButtonKeyRows)
 
+    func makeKeyboard() {
+        let letterButtonKeyRows = [
+            ["⢎⣱", "⣧⣼", "⣟⣋", "⡯⢕", "⠉⡏", "⠑⡎", "⣇⣸", "⢸", "⢎⡱", "⡯⠕"],
+            ["⡮⢵", "⣚⡣", "⣏⡱", "⡟⠋", "⢎⡭", "⡗⢺", "⢄⡸", "⡗⢎", "⣇⣀"],
+            ["⣩⣋", "⡱⢎", "⢎⣉", "⢇⡸", "⣟⡳", "⡗⢼", "⡟⢻"]
+        ]
         let letterButtonRows = letterButtonKeyRows.map { makeButtonRow($0) }
         
         for (index, buttonRow) in letterButtonRows.enumerated() {
             if index == 0 {
-                buttonRow[0].topAnchor.constraint(equalTo: self.view.topAnchor, constant: self.keyboard.topMargin).isActive = true
+                buttonRow[0].topAnchor.constraint(equalTo: self.view.topAnchor, constant: verticalMargin).isActive = true
             } else {
-                buttonRow[0].topAnchor.constraint(equalTo: letterButtonRows[index-1][0].bottomAnchor, constant: self.keyboard.verticalSpaceBetweenButtons).isActive = true
+                buttonRow[0].topAnchor.constraint(equalTo: letterButtonRows[index-1][0].bottomAnchor, constant: verticalSpaceBetweenButtons).isActive = true
             }
         }
         
-        let spacebar = KeyboardButton("　", height: self.keyboard.buttonHeight)
+        let buttonHeight = (CGFloat(226.0) - 2*self.verticalMargin - 3*self.verticalSpaceBetweenButtons)/4.0
+        let spacebar = KeyboardButton("　", height: buttonHeight)
         self.view.addSubview(spacebar)
-        // TODO: Define the magic number 120.0 somewhere
         spacebar.leadingAnchor.constraint(equalTo: self.view.leadingAnchor, constant: 120.0).isActive = true
         // TODO: This is super hacky
-        spacebar.topAnchor.constraint(equalTo: letterButtonRows[2][0].bottomAnchor, constant: self.keyboard.verticalSpaceBetweenButtons).isActive = true
-        // TODO: Define the magic number -120.0 somewhere
+        spacebar.topAnchor.constraint(equalTo: letterButtonRows[2][0].bottomAnchor, constant: verticalSpaceBetweenButtons).isActive = true
         spacebar.trailingAnchor.constraint(equalTo: self.view.trailingAnchor, constant: -120.0).isActive = true
-        spacebar.bottomAnchor.constraint(equalTo: self.view.bottomAnchor, constant: -self.keyboard.bottomMargin).isActive = true
+        spacebar.bottomAnchor.constraint(equalTo: self.view.bottomAnchor, constant: -verticalMargin).isActive = true
         
         self.makeNextKeyboardButton()
     }
@@ -131,8 +137,9 @@ class KeyboardViewController: UIInputViewController {
         
         // insert the label's text into the text field
         textDocumentProxy.insertText(touchViewLabelRaw.text!)
-
+        
         (touchView as! KeyboardButton).playClick()
     }
 }
+
 
