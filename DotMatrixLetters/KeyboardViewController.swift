@@ -19,7 +19,7 @@ class KeyboardViewController: UIInputViewController {
     func makeButtonRow(_ buttonKeys: [String]) -> [UIView] {
         let buttonHeight = (CGFloat(226.0) - 2*self.verticalMargin - 3*self.verticalSpaceBetweenButtons)/4.0
         
-        let newButtons = buttonKeys.map { KeyboardButton($0, height: buttonHeight) }
+        let newButtons = buttonKeys.map { KeyboardButton($0, height: buttonHeight, documentProxyDelegate: self) }
         let spaceBetweenButtons = CGFloat(7.0)
         let leftMargin = CGFloat(5.0)
         let rightMargin = CGFloat(5.0)
@@ -77,7 +77,7 @@ class KeyboardViewController: UIInputViewController {
         }
         
         let buttonHeight = (CGFloat(226.0) - 2*self.verticalMargin - 3*self.verticalSpaceBetweenButtons)/4.0
-        let spacebar = KeyboardButton("　", height: buttonHeight)
+        let spacebar = KeyboardButton("　", height: buttonHeight, documentProxyDelegate: self)
         self.view.addSubview(spacebar)
         spacebar.leadingAnchor.constraint(equalTo: self.view.leadingAnchor, constant: 120.0).isActive = true
         // TODO: This is super hacky
@@ -139,6 +139,12 @@ class KeyboardViewController: UIInputViewController {
         textDocumentProxy.insertText(touchViewLabelRaw.text!)
         
         (touchView as! KeyboardButton).playClick()
+    }
+}
+
+extension KeyboardViewController : DocumentProxyDelegate {
+    func updateText(buttonText: String) {
+        self.textDocumentProxy.insertText(buttonText)
     }
 }
 

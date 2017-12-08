@@ -8,19 +8,24 @@
 
 import UIKit
 
-// TODO: Need to somehow trigger click sound when button touched
 // TODO: Need to somehow "grow" button when touched like the system ones do
 class KeyboardButton : UIView {
-    init(_ labelText: String, height: CGFloat) {
+    var labelText : String
+    var documentProxyDelegate : DocumentProxyDelegate
+
+    // Needed to keep XCode happy
+    required init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+
+    init(_ labelText: String, height: CGFloat, documentProxyDelegate: DocumentProxyDelegate) {
+        self.labelText = labelText
+        self.documentProxyDelegate = documentProxyDelegate
         super.init(frame: CGRect.zero)
 
         let newButtonLabel = UILabel()
-        
-        // TODO: Wire this up
-        // newButton.addGestureRecognizer(UIGestureRecognizer.init(target: self, action: #selector(emojiButtonHandler)))
         newButtonLabel.translatesAutoresizingMaskIntoConstraints = false
         newButtonLabel.text = labelText
-        
         self.addSubview(newButtonLabel)
         newButtonLabel.centerXAnchor.constraint(equalTo: self.centerXAnchor).isActive = true
         newButtonLabel.centerYAnchor.constraint(equalTo: self.centerYAnchor).isActive = true
@@ -33,18 +38,17 @@ class KeyboardButton : UIView {
         self.layer.shadowOpacity = 1.0
         self.layer.shadowRadius = 0.0
         self.layer.shadowOffset = CGSize(width: 0.0, height: 1.0)
+
+        self.isUserInteractionEnabled = true
+        self.addGestureRecognizer(UIGestureRecognizer.init(target: self, action: #selector(handleTap(_:))))
     }
     
-    required init?(coder aDecoder: NSCoder) {
-        super.init(coder: aDecoder)
-    }
-
-    func playClick() {
-        UIDevice.current.playInputClick()
+    @objc func handleTap(_ recognizer: UIGestureRecognizer) {
+        print("I am here!!!")
     }
 }
 
-extension UIView : UIInputViewAudioFeedback {
+extension KeyboardButton : UIInputViewAudioFeedback {
     public var enableInputClicksWhenVisible: Bool {
         return true
     }
