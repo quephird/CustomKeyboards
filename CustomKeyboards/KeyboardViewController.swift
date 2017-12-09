@@ -75,13 +75,12 @@ class KeyboardViewController: UIInputViewController {
         
         self.makeNextKeyboardButton()
     }
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         self.makeKeyboard()
     }
-    
+
     override func textDidChange(_ textInput: UITextInput?) {
         // The app has just changed the document's contents, the document context has been updated.
         
