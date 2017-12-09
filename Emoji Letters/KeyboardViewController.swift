@@ -19,7 +19,7 @@ class KeyboardViewController: UIInputViewController {
     ]
 
     func makeButtonRow(_ buttonKeys: [String]) -> [UIView] {
-        let newButtons = buttonKeys.map { KeyboardButton($0, height: self.keyboard.buttonHeight) }
+        let newButtons = buttonKeys.map { KeyboardButton($0, height: self.keyboard.buttonHeight, documentProxyDelegate: self) }
         let additionalMargin = (keyboard.keyboardWidth - self.keyboard.leftMargin - self.keyboard.rightMargin)*(10.0-CGFloat(newButtons.count))/20.0
         
         for (index, button) in newButtons.enumerated() {
@@ -69,7 +69,7 @@ class KeyboardViewController: UIInputViewController {
             }
         }
         
-        let spacebar = KeyboardButton("　", height: self.keyboard.buttonHeight)
+        let spacebar = KeyboardButton("　", height: self.keyboard.buttonHeight, documentProxyDelegate: self)
         self.view.addSubview(spacebar)
         // TODO: Define the magic number 120.0 somewhere
         spacebar.leadingAnchor.constraint(equalTo: self.view.leadingAnchor, constant: 120.0).isActive = true
@@ -88,10 +88,6 @@ class KeyboardViewController: UIInputViewController {
         self.makeKeyboard()
     }
     
-    override func textWillChange(_ textInput: UITextInput?) {
-        // The app is about to change the document's contents. Perform any preparation here.
-    }
-    
     override func textDidChange(_ textInput: UITextInput?) {
         // The app has just changed the document's contents, the document context has been updated.
         
@@ -104,35 +100,10 @@ class KeyboardViewController: UIInputViewController {
         }
         self.nextKeyboardButton.setTitleColor(textColor, for: [])
     }
-    
-    func emojiButtonHandler(recognizer: UIGestureRecognizer) {
-        // TODO
-    }
-    
-    // TODO: Replace button handler logic here with distinct and separate handlers
-    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-        // call the superclass' function because you almost always should
-        super.touchesBegan(touches, with: event)
-        
-        // get the user's touch
-        let touch = touches.first
-        
-        // get the coordinates (point) of the touch
-        let touchPoint = touch?.location(in: self.view)
-        
-        // get the view (key) the touch is in
-        let touchView = self.view.hitTest(touchPoint!, with: nil)
-        
-        // get the key's label
-        let touchViewLabel = touchView?.subviews[0]
-        
-        // downcast the label from UIView to UILabel so we can access the "text" property
-        let touchViewLabelRaw = touchViewLabel as! UILabel
-        
-        // insert the label's text into the text field
-        textDocumentProxy.insertText(touchViewLabelRaw.text!)
-
-        (touchView as! KeyboardButton).playClick()
-    }
 }
 
+extension KeyboardViewController : DocumentProxyDelegate {
+    func updateText(buttonText: String) {
+        self.textDocumentProxy.insertText(buttonText)
+    }
+}
