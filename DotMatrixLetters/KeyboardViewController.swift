@@ -137,8 +137,6 @@ class KeyboardViewController: UIInputViewController {
         
         // insert the label's text into the text field
         textDocumentProxy.insertText(touchViewLabelRaw.text!)
-        
-        (touchView as! KeyboardButton).playClick()
     }
 }
 

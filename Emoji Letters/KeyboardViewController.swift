@@ -104,32 +104,6 @@ class KeyboardViewController: UIInputViewController {
         }
         self.nextKeyboardButton.setTitleColor(textColor, for: [])
     }
-        
-    // TODO: Replace button handler logic here with distinct and separate handlers
-//    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-//        // call the superclass' function because you almost always should
-//        super.touchesBegan(touches, with: event)
-//
-//        // get the user's touch
-//        let touch = touches.first
-//
-//        // get the coordinates (point) of the touch
-//        let touchPoint = touch?.location(in: self.view)
-//
-//        // get the view (key) the touch is in
-//        let touchView = self.view.hitTest(touchPoint!, with: nil)
-//
-//        // get the key's label
-//        let touchViewLabel = touchView?.subviews[0]
-//
-//        // downcast the label from UIView to UILabel so we can access the "text" property
-//        let touchViewLabelRaw = touchViewLabel as! UILabel
-//
-//        // insert the label's text into the text field
-//        textDocumentProxy.insertText(touchViewLabelRaw.text!)
-//
-//        (touchView as! KeyboardButton).playClick()
-//    }
 }
 
 extension KeyboardViewController : DocumentProxyDelegate {

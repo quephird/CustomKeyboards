@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import AudioToolbox
 
 // TODO: Need to somehow "grow" button when touched like the system ones do
 class KeyboardButton : UIView {
@@ -40,16 +41,35 @@ class KeyboardButton : UIView {
         self.layer.shadowOffset = CGSize(width: 0.0, height: 1.0)
 
         self.isUserInteractionEnabled = true
-        self.addGestureRecognizer(UIGestureRecognizer.init(target: self, action: #selector(handleTap(_:))))
+        self.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(handleTap(_:))))
+    }
+
+    @objc func handleTap(_ recognizer: UITapGestureRecognizer) {
+        self.playInputClick()
+        self.documentProxyDelegate.updateText(buttonText: labelText)
     }
     
-    @objc func handleTap(_ recognizer: UIGestureRecognizer) {
-        print("I am here!!!")
-    }
-}
-
-extension KeyboardButton : UIInputViewAudioFeedback {
-    public var enableInputClicksWhenVisible: Bool {
-        return true
+//    I have to resort to the following hack instead of using
+//    UIDevice.current.playInputClick because the documentation lies
+//    and this is how I feel about the software industry:
+//
+//    (╯°□°）╯︵
+//    ┳┳┳┳┳　　|
+//    ┏┓┏┓┃　　|
+//    ┗┛┗┛┃
+//    ┏┓┏┓┃ǝɹɐʍʇɟos ll∀
+//    ┗┛┗┛┃
+//    ┏┓┏┓┃
+//    ┗┛┗┛┃
+//    ┏┓┏┓┃🔥🔥🔥🔥
+//    ┗┛┗┛┃🔥🔥🔥🔥
+//    ┏┓┏┓┃🔥🔥🔥🔥
+//    ┃┃┃┃┃🔥🔥🔥🔥
+//    ┻┻┻┻┻
+    
+    func playInputClick() {
+        DispatchQueue.global(qos: .default).async(execute: {
+            AudioServicesPlaySystemSound(1104)
+        })
     }
 }
