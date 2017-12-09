@@ -1,8 +1,7 @@
 //
 //  KeyboardViewController.swift
-//  Emoji letters
 //
-//  Created by danielle kefford on 11/13/17.
+//  Created by danielle kefford on 12/09/17.
 //  Copyright © 2017 danielle kefford. All rights reserved.
 //
 
@@ -10,14 +9,9 @@ import UIKit
 
 class KeyboardViewController: UIInputViewController {
     var nextKeyboardButton: UIButton!
+    var letterButtonKeyRows : [[String]]!
     var keyboard : Keyboard!
-
-    let letterButtonKeyRows = [
-        ["🍳", "〰️", "📧", "®️", "✝️", "🈂️", "⛎", "ℹ️", "🅾️", "🅿️"],
-        ["🅰️", "⚡️", "🆔", "🎏", "🌀", "♓️", "🗾", "🎋", "👢"],
-        ["💤", "❌", "☪️", "♈️", "🅱️", "♑️", "♏️"]
-    ]
-
+    
     func makeButtonRow(_ buttonKeys: [String]) -> [UIView] {
         let newButtons = buttonKeys.map { KeyboardButton($0, height: self.keyboard.buttonHeight, documentProxyDelegate: self) }
         let additionalMargin = (keyboard.keyboardWidth - self.keyboard.leftMargin - self.keyboard.rightMargin)*(10.0-CGFloat(newButtons.count))/20.0
@@ -58,7 +52,7 @@ class KeyboardViewController: UIInputViewController {
     
     func makeKeyboard() {
         self.keyboard = Keyboard(self.letterButtonKeyRows)
-
+        
         let letterButtonRows = letterButtonKeyRows.map { makeButtonRow($0) }
         
         for (index, buttonRow) in letterButtonRows.enumerated() {
@@ -107,3 +101,4 @@ extension KeyboardViewController : DocumentProxyDelegate {
         self.textDocumentProxy.insertText(buttonText)
     }
 }
+
