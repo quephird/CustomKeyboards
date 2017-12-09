@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		874A73C81FDC78680074219C /* KeyboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 874A73C71FDC78680074219C /* KeyboardViewController.swift */; };
+		874A73C91FDC78FE0074219C /* KeyboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 874A73C71FDC78680074219C /* KeyboardViewController.swift */; };
+		874A73CA1FDC7FFB0074219C /* KeyboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 874A73C71FDC78680074219C /* KeyboardViewController.swift */; };
 		87BA96971FCCFA2400FD7E7A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87BA96961FCCFA2400FD7E7A /* AppDelegate.swift */; };
 		87BA96991FCCFA2400FD7E7A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87BA96981FCCFA2400FD7E7A /* ViewController.swift */; };
 		87BA969C1FCCFA2400FD7E7A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 87BA969A1FCCFA2400FD7E7A /* Main.storyboard */; };
@@ -14,7 +17,7 @@
 		87BA96A11FCCFA2400FD7E7A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 87BA969F1FCCFA2400FD7E7A /* LaunchScreen.storyboard */; };
 		87BA96AC1FCCFA2400FD7E7A /* CustomKeyboardsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87BA96AB1FCCFA2400FD7E7A /* CustomKeyboardsTests.swift */; };
 		87BA96B71FCCFA2400FD7E7A /* CustomKeyboardsUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87BA96B61FCCFA2400FD7E7A /* CustomKeyboardsUITests.swift */; };
-		87BA96CB1FCCFA3B00FD7E7A /* KeyboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87BA96CA1FCCFA3B00FD7E7A /* KeyboardViewController.swift */; };
+		87BA96CB1FCCFA3B00FD7E7A /* EmojiKeyboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87BA96CA1FCCFA3B00FD7E7A /* EmojiKeyboardViewController.swift */; };
 		87BA96CF1FCCFA3B00FD7E7A /* EmojiLetters.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 87BA96C81FCCFA3A00FD7E7A /* EmojiLetters.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		87C248321FD1070700C87862 /* Keyboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87FAAE4B1FD0F1850051F6BA /* Keyboard.swift */; };
 		87C248331FD1070800C87862 /* Keyboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87FAAE4B1FD0F1850051F6BA /* Keyboard.swift */; };
@@ -23,7 +26,7 @@
 		87F841311FD910BC00F35AF8 /* DocumentProxyDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87C248341FD63CFD00C87862 /* DocumentProxyDelegate.swift */; };
 		87FAAE381FCFD49E0051F6BA /* KeyboardButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8748F7EC1FCD066700CBF5C5 /* KeyboardButton.swift */; };
 		87FAAE3A1FCFD4ED0051F6BA /* KeyboardButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8748F7EC1FCD066700CBF5C5 /* KeyboardButton.swift */; };
-		87FAAE421FCFD53C0051F6BA /* KeyboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87FAAE411FCFD53C0051F6BA /* KeyboardViewController.swift */; };
+		87FAAE421FCFD53C0051F6BA /* DotMatrixKeyboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87FAAE411FCFD53C0051F6BA /* DotMatrixKeyboardViewController.swift */; };
 		87FAAE461FCFD53C0051F6BA /* DotMatrixLetters.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 87FAAE3F1FCFD53C0051F6BA /* DotMatrixLetters.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		87FAAE4A1FCFD5430051F6BA /* KeyboardButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8748F7EC1FCD066700CBF5C5 /* KeyboardButton.swift */; };
 		87FAAE4C1FD0F1850051F6BA /* Keyboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87FAAE4B1FD0F1850051F6BA /* Keyboard.swift */; };
@@ -77,6 +80,7 @@
 
 /* Begin PBXFileReference section */
 		8748F7EC1FCD066700CBF5C5 /* KeyboardButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardButton.swift; sourceTree = "<group>"; };
+		874A73C71FDC78680074219C /* KeyboardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardViewController.swift; sourceTree = "<group>"; };
 		87BA96931FCCFA2400FD7E7A /* CustomKeyboards.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CustomKeyboards.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		87BA96961FCCFA2400FD7E7A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		87BA96981FCCFA2400FD7E7A /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -91,11 +95,11 @@
 		87BA96B61FCCFA2400FD7E7A /* CustomKeyboardsUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomKeyboardsUITests.swift; sourceTree = "<group>"; };
 		87BA96B81FCCFA2400FD7E7A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		87BA96C81FCCFA3A00FD7E7A /* EmojiLetters.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = EmojiLetters.appex; sourceTree = BUILT_PRODUCTS_DIR; };
-		87BA96CA1FCCFA3B00FD7E7A /* KeyboardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardViewController.swift; sourceTree = "<group>"; };
+		87BA96CA1FCCFA3B00FD7E7A /* EmojiKeyboardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmojiKeyboardViewController.swift; sourceTree = "<group>"; };
 		87BA96CC1FCCFA3B00FD7E7A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		87C248341FD63CFD00C87862 /* DocumentProxyDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DocumentProxyDelegate.swift; sourceTree = "<group>"; };
 		87FAAE3F1FCFD53C0051F6BA /* DotMatrixLetters.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = DotMatrixLetters.appex; sourceTree = BUILT_PRODUCTS_DIR; };
-		87FAAE411FCFD53C0051F6BA /* KeyboardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardViewController.swift; sourceTree = "<group>"; };
+		87FAAE411FCFD53C0051F6BA /* DotMatrixKeyboardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DotMatrixKeyboardViewController.swift; sourceTree = "<group>"; };
 		87FAAE431FCFD53C0051F6BA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		87FAAE4B1FD0F1850051F6BA /* Keyboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Keyboard.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -170,6 +174,7 @@
 				87C248341FD63CFD00C87862 /* DocumentProxyDelegate.swift */,
 				87FAAE4B1FD0F1850051F6BA /* Keyboard.swift */,
 				8748F7EC1FCD066700CBF5C5 /* KeyboardButton.swift */,
+				874A73C71FDC78680074219C /* KeyboardViewController.swift */,
 				87BA96981FCCFA2400FD7E7A /* ViewController.swift */,
 				87BA969A1FCCFA2400FD7E7A /* Main.storyboard */,
 				87BA969D1FCCFA2400FD7E7A /* Assets.xcassets */,
@@ -200,7 +205,7 @@
 		87BA96C91FCCFA3B00FD7E7A /* Emoji Letters */ = {
 			isa = PBXGroup;
 			children = (
-				87BA96CA1FCCFA3B00FD7E7A /* KeyboardViewController.swift */,
+				87BA96CA1FCCFA3B00FD7E7A /* EmojiKeyboardViewController.swift */,
 				87BA96CC1FCCFA3B00FD7E7A /* Info.plist */,
 			);
 			path = "Emoji Letters";
@@ -209,7 +214,7 @@
 		87FAAE401FCFD53C0051F6BA /* DotMatrixLetters */ = {
 			isa = PBXGroup;
 			children = (
-				87FAAE411FCFD53C0051F6BA /* KeyboardViewController.swift */,
+				87FAAE411FCFD53C0051F6BA /* DotMatrixKeyboardViewController.swift */,
 				87FAAE431FCFD53C0051F6BA /* Info.plist */,
 			);
 			path = DotMatrixLetters;
@@ -411,6 +416,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				87FAAE381FCFD49E0051F6BA /* KeyboardButton.swift in Sources */,
+				874A73C81FDC78680074219C /* KeyboardViewController.swift in Sources */,
 				87BA96991FCCFA2400FD7E7A /* ViewController.swift in Sources */,
 				87F8412F1FD9106D00F35AF8 /* DocumentProxyDelegate.swift in Sources */,
 				87FAAE4C1FD0F1850051F6BA /* Keyboard.swift in Sources */,
@@ -439,9 +445,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				87FAAE3A1FCFD4ED0051F6BA /* KeyboardButton.swift in Sources */,
+				874A73C91FDC78FE0074219C /* KeyboardViewController.swift in Sources */,
 				87C248321FD1070700C87862 /* Keyboard.swift in Sources */,
 				87C248361FD6400F00C87862 /* DocumentProxyDelegate.swift in Sources */,
-				87BA96CB1FCCFA3B00FD7E7A /* KeyboardViewController.swift in Sources */,
+				87BA96CB1FCCFA3B00FD7E7A /* EmojiKeyboardViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -450,9 +457,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				87FAAE4A1FCFD5430051F6BA /* KeyboardButton.swift in Sources */,
+				874A73CA1FDC7FFB0074219C /* KeyboardViewController.swift in Sources */,
 				87C248331FD1070800C87862 /* Keyboard.swift in Sources */,
 				87F841311FD910BC00F35AF8 /* DocumentProxyDelegate.swift in Sources */,
-				87FAAE421FCFD53C0051F6BA /* KeyboardViewController.swift in Sources */,
+				87FAAE421FCFD53C0051F6BA /* DotMatrixKeyboardViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
