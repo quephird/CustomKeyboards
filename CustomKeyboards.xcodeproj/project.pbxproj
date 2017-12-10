@@ -10,6 +10,12 @@
 		874A73C81FDC78680074219C /* KeyboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 874A73C71FDC78680074219C /* KeyboardViewController.swift */; };
 		874A73C91FDC78FE0074219C /* KeyboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 874A73C71FDC78680074219C /* KeyboardViewController.swift */; };
 		874A73CA1FDC7FFB0074219C /* KeyboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 874A73C71FDC78680074219C /* KeyboardViewController.swift */; };
+		874A73D21FDCB1300074219C /* DoubledKeyboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 874A73D11FDCB1300074219C /* DoubledKeyboardViewController.swift */; };
+		874A73D61FDCB1300074219C /* DoubledLetters.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 874A73CF1FDCB1300074219C /* DoubledLetters.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		874A73DA1FDCB16C0074219C /* KeyboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 874A73C71FDC78680074219C /* KeyboardViewController.swift */; };
+		874A73DB1FDCB5D60074219C /* DocumentProxyDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87C248341FD63CFD00C87862 /* DocumentProxyDelegate.swift */; };
+		8750E48E1FDCB68E00241610 /* Keyboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87FAAE4B1FD0F1850051F6BA /* Keyboard.swift */; };
+		8750E48F1FDCB69C00241610 /* KeyboardButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8748F7EC1FCD066700CBF5C5 /* KeyboardButton.swift */; };
 		87BA96971FCCFA2400FD7E7A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87BA96961FCCFA2400FD7E7A /* AppDelegate.swift */; };
 		87BA96991FCCFA2400FD7E7A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87BA96981FCCFA2400FD7E7A /* ViewController.swift */; };
 		87BA969C1FCCFA2400FD7E7A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 87BA969A1FCCFA2400FD7E7A /* Main.storyboard */; };
@@ -33,6 +39,13 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		874A73D41FDCB1300074219C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 87BA968B1FCCFA2400FD7E7A /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 874A73CE1FDCB1300074219C;
+			remoteInfo = DoubledLetters;
+		};
 		87BA96A81FCCFA2400FD7E7A /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 87BA968B1FCCFA2400FD7E7A /* Project object */;
@@ -72,6 +85,7 @@
 			files = (
 				87BA96CF1FCCFA3B00FD7E7A /* EmojiLetters.appex in Embed App Extensions */,
 				87FAAE461FCFD53C0051F6BA /* DotMatrixLetters.appex in Embed App Extensions */,
+				874A73D61FDCB1300074219C /* DoubledLetters.appex in Embed App Extensions */,
 			);
 			name = "Embed App Extensions";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -81,6 +95,9 @@
 /* Begin PBXFileReference section */
 		8748F7EC1FCD066700CBF5C5 /* KeyboardButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardButton.swift; sourceTree = "<group>"; };
 		874A73C71FDC78680074219C /* KeyboardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardViewController.swift; sourceTree = "<group>"; };
+		874A73CF1FDCB1300074219C /* DoubledLetters.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = DoubledLetters.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		874A73D11FDCB1300074219C /* DoubledKeyboardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoubledKeyboardViewController.swift; sourceTree = "<group>"; };
+		874A73D31FDCB1300074219C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		87BA96931FCCFA2400FD7E7A /* CustomKeyboards.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CustomKeyboards.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		87BA96961FCCFA2400FD7E7A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		87BA96981FCCFA2400FD7E7A /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -105,6 +122,13 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		874A73CC1FDCB1300074219C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		87BA96901FCCFA2400FD7E7A /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -143,6 +167,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		874A73D01FDCB1300074219C /* DoubledLetters */ = {
+			isa = PBXGroup;
+			children = (
+				874A73D11FDCB1300074219C /* DoubledKeyboardViewController.swift */,
+				874A73D31FDCB1300074219C /* Info.plist */,
+			);
+			path = DoubledLetters;
+			sourceTree = "<group>";
+		};
 		87BA968A1FCCFA2400FD7E7A = {
 			isa = PBXGroup;
 			children = (
@@ -151,6 +184,7 @@
 				87BA96B51FCCFA2400FD7E7A /* CustomKeyboardsUITests */,
 				87BA96C91FCCFA3B00FD7E7A /* Emoji Letters */,
 				87FAAE401FCFD53C0051F6BA /* DotMatrixLetters */,
+				874A73D01FDCB1300074219C /* DoubledLetters */,
 				87BA96941FCCFA2400FD7E7A /* Products */,
 			);
 			sourceTree = "<group>";
@@ -163,6 +197,7 @@
 				87BA96B21FCCFA2400FD7E7A /* CustomKeyboardsUITests.xctest */,
 				87BA96C81FCCFA3A00FD7E7A /* EmojiLetters.appex */,
 				87FAAE3F1FCFD53C0051F6BA /* DotMatrixLetters.appex */,
+				874A73CF1FDCB1300074219C /* DoubledLetters.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -223,6 +258,23 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		874A73CE1FDCB1300074219C /* DoubledLetters */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 874A73D91FDCB1300074219C /* Build configuration list for PBXNativeTarget "DoubledLetters" */;
+			buildPhases = (
+				874A73CB1FDCB1300074219C /* Sources */,
+				874A73CC1FDCB1300074219C /* Frameworks */,
+				874A73CD1FDCB1300074219C /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = DoubledLetters;
+			productName = DoubledLetters;
+			productReference = 874A73CF1FDCB1300074219C /* DoubledLetters.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
 		87BA96921FCCFA2400FD7E7A /* CustomKeyboards */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 87BA96BB1FCCFA2400FD7E7A /* Build configuration list for PBXNativeTarget "CustomKeyboards" */;
@@ -237,6 +289,7 @@
 			dependencies = (
 				87BA96CE1FCCFA3B00FD7E7A /* PBXTargetDependency */,
 				87FAAE451FCFD53C0051F6BA /* PBXTargetDependency */,
+				874A73D51FDCB1300074219C /* PBXTargetDependency */,
 			);
 			name = CustomKeyboards;
 			productName = CustomKeyboards;
@@ -323,6 +376,10 @@
 				LastUpgradeCheck = 0910;
 				ORGANIZATIONNAME = "danielle kefford";
 				TargetAttributes = {
+					874A73CE1FDCB1300074219C = {
+						CreatedOnToolsVersion = 9.1;
+						ProvisioningStyle = Automatic;
+					};
 					87BA96921FCCFA2400FD7E7A = {
 						CreatedOnToolsVersion = 9.1;
 						ProvisioningStyle = Automatic;
@@ -365,11 +422,19 @@
 				87BA96B11FCCFA2400FD7E7A /* CustomKeyboardsUITests */,
 				87BA96C71FCCFA3A00FD7E7A /* EmojiLetters */,
 				87FAAE3E1FCFD53C0051F6BA /* DotMatrixLetters */,
+				874A73CE1FDCB1300074219C /* DoubledLetters */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		874A73CD1FDCB1300074219C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		87BA96911FCCFA2400FD7E7A /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -411,6 +476,18 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		874A73CB1FDCB1300074219C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8750E48F1FDCB69C00241610 /* KeyboardButton.swift in Sources */,
+				874A73DB1FDCB5D60074219C /* DocumentProxyDelegate.swift in Sources */,
+				874A73D21FDCB1300074219C /* DoubledKeyboardViewController.swift in Sources */,
+				8750E48E1FDCB68E00241610 /* Keyboard.swift in Sources */,
+				874A73DA1FDCB16C0074219C /* KeyboardViewController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		87BA968F1FCCFA2400FD7E7A /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -467,6 +544,11 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		874A73D51FDCB1300074219C /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 874A73CE1FDCB1300074219C /* DoubledLetters */;
+			targetProxy = 874A73D41FDCB1300074219C /* PBXContainerItemProxy */;
+		};
 		87BA96A91FCCFA2400FD7E7A /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 87BA96921FCCFA2400FD7E7A /* CustomKeyboards */;
@@ -509,6 +591,36 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		874A73D71FDCB1300074219C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = GARV9392W2;
+				INFOPLIST_FILE = DoubledLetters/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.quephird.CustomKeyboards.DoubledLetters;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		874A73D81FDCB1300074219C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = GARV9392W2;
+				INFOPLIST_FILE = DoubledLetters/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.quephird.CustomKeyboards.DoubledLetters;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
 		87BA96B91FCCFA2400FD7E7A /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -777,6 +889,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		874A73D91FDCB1300074219C /* Build configuration list for PBXNativeTarget "DoubledLetters" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				874A73D71FDCB1300074219C /* Debug */,
+				874A73D81FDCB1300074219C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		87BA968E1FCCFA2400FD7E7A /* Build configuration list for PBXProject "CustomKeyboards" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
