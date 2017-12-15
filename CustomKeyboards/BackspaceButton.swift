@@ -12,7 +12,7 @@ class BackspaceButton : KeyboardButton {
     override func handleTap(_ recognizer: UITapGestureRecognizer) {
         // TODO: Figure out how to set pressed and unpressed colors
         // self.backgroundColor = UIColor.init(white: 0.5, alpha: 1)
-        self.playInputClick()
+        self.playInputClick(soundId: self.deleteSoundId)
         self.documentProxyDelegate.deleteText()
     }
 }

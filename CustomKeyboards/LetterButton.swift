@@ -10,7 +10,7 @@ import UIKit
 
 class LetterButton : KeyboardButton {
     override func handleTap(_ recognizer: UITapGestureRecognizer) {
-        self.playInputClick()
+        self.playInputClick(soundId: self.clickSoundId)
         self.documentProxyDelegate.insertText(buttonText: labelText)
     }
 }
