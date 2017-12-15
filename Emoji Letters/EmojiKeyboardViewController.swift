@@ -16,6 +16,7 @@ class EmojiKeyboardViewController: KeyboardViewController {
             ["🅰️", "⚡️", "🆔", "🎏", "🌀", "♓️", "🗾", "🎋", "👢"],
             ["💤", "❌", "☪️", "♈️", "🅱️", "♑️", "♏️"]
         ]
+        self.deleteButton = "🔙"
     }
     
     required init?(coder aDecoder: NSCoder) {

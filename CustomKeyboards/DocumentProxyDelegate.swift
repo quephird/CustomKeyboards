@@ -7,5 +7,7 @@
 //
 
 protocol DocumentProxyDelegate {
-    mutating func updateText(buttonText: String)
+    mutating func insertText(buttonText: String)
+
+    mutating func deleteText()
 }

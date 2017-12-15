@@ -16,6 +16,7 @@ class DoubledKeyboardViewController : KeyboardViewController {
             ["𝔸", "𝕊", "𝔻", "𝔽", "𝔾", "ℍ", "𝕁", "𝕂", "𝕃"],
             ["ℤ", "𝕏", "ℂ", "𝕍", "𝔹", "ℕ", "𝕄"]
         ]
+        self.deleteButton = "⤆"
     }
     
     required init?(coder aDecoder: NSCoder) {
