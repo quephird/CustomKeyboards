@@ -10,10 +10,11 @@ import UIKit
 class KeyboardViewController: UIInputViewController {
     var nextKeyboardButton: UIButton!
     var letterButtonKeyRows : [[String]]!
+    var deleteButton : String!
     var keyboard : Keyboard!
     
     func makeButtonRow(_ buttonKeys: [String]) -> [UIView] {
-        let newButtons = buttonKeys.map { KeyboardButton($0, height: self.keyboard.buttonHeight, documentProxyDelegate: self) }
+        let newButtons = buttonKeys.map { LetterButton($0, height: self.keyboard.buttonHeight, documentProxyDelegate: self) }
         let additionalMargin = (keyboard.keyboardWidth - self.keyboard.leftMargin - self.keyboard.rightMargin)*(10.0-CGFloat(newButtons.count))/20.0
         
         for (index, button) in newButtons.enumerated() {
@@ -63,7 +64,7 @@ class KeyboardViewController: UIInputViewController {
             }
         }
         
-        let spacebar = KeyboardButton("　", height: self.keyboard.buttonHeight, documentProxyDelegate: self)
+        let spacebar = LetterButton("　", height: self.keyboard.buttonHeight, documentProxyDelegate: self)
         self.view.addSubview(spacebar)
         // TODO: Define the magic number 120.0 somewhere
         spacebar.leadingAnchor.constraint(equalTo: self.view.leadingAnchor, constant: 120.0).isActive = true
@@ -73,6 +74,12 @@ class KeyboardViewController: UIInputViewController {
         spacebar.trailingAnchor.constraint(equalTo: self.view.trailingAnchor, constant: -120.0).isActive = true
         spacebar.bottomAnchor.constraint(equalTo: self.view.bottomAnchor, constant: -self.keyboard.bottomMargin).isActive = true
         
+        let backspace = BackspaceButton(self.deleteButton, height: self.keyboard.buttonHeight, documentProxyDelegate: self)
+        self.view.addSubview(backspace)
+        backspace.widthAnchor.constraint(equalTo: letterButtonRows[2][0].widthAnchor).isActive = true
+        backspace.trailingAnchor.constraint(equalTo: letterButtonRows[0][letterButtonRows[0].count-1].trailingAnchor).isActive = true
+        backspace.topAnchor.constraint(equalTo: letterButtonRows[2][0].topAnchor).isActive = true
+
         self.makeNextKeyboardButton()
     }
 
@@ -96,8 +103,12 @@ class KeyboardViewController: UIInputViewController {
 }
 
 extension KeyboardViewController : DocumentProxyDelegate {
-    func updateText(buttonText: String) {
+    func insertText(buttonText: String) {
         self.textDocumentProxy.insertText(buttonText)
+    }
+
+    func deleteText() {
+        self.textDocumentProxy.deleteBackward()
     }
 }
 

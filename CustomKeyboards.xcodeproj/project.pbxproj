@@ -16,6 +16,18 @@
 		874A73DB1FDCB5D60074219C /* DocumentProxyDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87C248341FD63CFD00C87862 /* DocumentProxyDelegate.swift */; };
 		8750E48E1FDCB68E00241610 /* Keyboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87FAAE4B1FD0F1850051F6BA /* Keyboard.swift */; };
 		8750E48F1FDCB69C00241610 /* KeyboardButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8748F7EC1FCD066700CBF5C5 /* KeyboardButton.swift */; };
+		8750E4961FE0C00000241610 /* LetterButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8750E4951FE0C00000241610 /* LetterButton.swift */; };
+		8750E4981FE0CE1A00241610 /* Tappable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8750E4971FE0CE1A00241610 /* Tappable.swift */; };
+		8750E4991FE214AD00241610 /* Tappable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8750E4971FE0CE1A00241610 /* Tappable.swift */; };
+		8750E49A1FE214AE00241610 /* Tappable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8750E4971FE0CE1A00241610 /* Tappable.swift */; };
+		8750E49B1FE214AF00241610 /* Tappable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8750E4971FE0CE1A00241610 /* Tappable.swift */; };
+		8750E49C1FE214B200241610 /* LetterButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8750E4951FE0C00000241610 /* LetterButton.swift */; };
+		8750E49D1FE214B300241610 /* LetterButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8750E4951FE0C00000241610 /* LetterButton.swift */; };
+		8750E49E1FE214B300241610 /* LetterButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8750E4951FE0C00000241610 /* LetterButton.swift */; };
+		8750E4A01FE215B200241610 /* BackspaceButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8750E49F1FE215B200241610 /* BackspaceButton.swift */; };
+		8750E4A11FE215C000241610 /* BackspaceButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8750E49F1FE215B200241610 /* BackspaceButton.swift */; };
+		8750E4A21FE215C000241610 /* BackspaceButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8750E49F1FE215B200241610 /* BackspaceButton.swift */; };
+		8750E4A31FE215C100241610 /* BackspaceButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8750E49F1FE215B200241610 /* BackspaceButton.swift */; };
 		87BA96971FCCFA2400FD7E7A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87BA96961FCCFA2400FD7E7A /* AppDelegate.swift */; };
 		87BA96991FCCFA2400FD7E7A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87BA96981FCCFA2400FD7E7A /* ViewController.swift */; };
 		87BA969C1FCCFA2400FD7E7A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 87BA969A1FCCFA2400FD7E7A /* Main.storyboard */; };
@@ -98,6 +110,9 @@
 		874A73CF1FDCB1300074219C /* DoubledLetters.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = DoubledLetters.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 		874A73D11FDCB1300074219C /* DoubledKeyboardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoubledKeyboardViewController.swift; sourceTree = "<group>"; };
 		874A73D31FDCB1300074219C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8750E4951FE0C00000241610 /* LetterButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LetterButton.swift; sourceTree = "<group>"; };
+		8750E4971FE0CE1A00241610 /* Tappable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tappable.swift; sourceTree = "<group>"; };
+		8750E49F1FE215B200241610 /* BackspaceButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackspaceButton.swift; sourceTree = "<group>"; };
 		87BA96931FCCFA2400FD7E7A /* CustomKeyboards.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CustomKeyboards.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		87BA96961FCCFA2400FD7E7A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		87BA96981FCCFA2400FD7E7A /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -209,7 +224,10 @@
 				87C248341FD63CFD00C87862 /* DocumentProxyDelegate.swift */,
 				87FAAE4B1FD0F1850051F6BA /* Keyboard.swift */,
 				8748F7EC1FCD066700CBF5C5 /* KeyboardButton.swift */,
+				8750E49F1FE215B200241610 /* BackspaceButton.swift */,
+				8750E4951FE0C00000241610 /* LetterButton.swift */,
 				874A73C71FDC78680074219C /* KeyboardViewController.swift */,
+				8750E4971FE0CE1A00241610 /* Tappable.swift */,
 				87BA96981FCCFA2400FD7E7A /* ViewController.swift */,
 				87BA969A1FCCFA2400FD7E7A /* Main.storyboard */,
 				87BA969D1FCCFA2400FD7E7A /* Assets.xcassets */,
@@ -481,8 +499,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				8750E48F1FDCB69C00241610 /* KeyboardButton.swift in Sources */,
+				8750E49E1FE214B300241610 /* LetterButton.swift in Sources */,
 				874A73DB1FDCB5D60074219C /* DocumentProxyDelegate.swift in Sources */,
 				874A73D21FDCB1300074219C /* DoubledKeyboardViewController.swift in Sources */,
+				8750E49B1FE214AF00241610 /* Tappable.swift in Sources */,
+				8750E4A31FE215C100241610 /* BackspaceButton.swift in Sources */,
 				8750E48E1FDCB68E00241610 /* Keyboard.swift in Sources */,
 				874A73DA1FDCB16C0074219C /* KeyboardViewController.swift in Sources */,
 			);
@@ -493,11 +514,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				87FAAE381FCFD49E0051F6BA /* KeyboardButton.swift in Sources */,
+				8750E4961FE0C00000241610 /* LetterButton.swift in Sources */,
 				874A73C81FDC78680074219C /* KeyboardViewController.swift in Sources */,
+				8750E4981FE0CE1A00241610 /* Tappable.swift in Sources */,
 				87BA96991FCCFA2400FD7E7A /* ViewController.swift in Sources */,
 				87F8412F1FD9106D00F35AF8 /* DocumentProxyDelegate.swift in Sources */,
 				87FAAE4C1FD0F1850051F6BA /* Keyboard.swift in Sources */,
 				87BA96971FCCFA2400FD7E7A /* AppDelegate.swift in Sources */,
+				8750E4A01FE215B200241610 /* BackspaceButton.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -522,8 +546,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				87FAAE3A1FCFD4ED0051F6BA /* KeyboardButton.swift in Sources */,
+				8750E49C1FE214B200241610 /* LetterButton.swift in Sources */,
 				874A73C91FDC78FE0074219C /* KeyboardViewController.swift in Sources */,
 				87C248321FD1070700C87862 /* Keyboard.swift in Sources */,
+				8750E4991FE214AD00241610 /* Tappable.swift in Sources */,
+				8750E4A11FE215C000241610 /* BackspaceButton.swift in Sources */,
 				87C248361FD6400F00C87862 /* DocumentProxyDelegate.swift in Sources */,
 				87BA96CB1FCCFA3B00FD7E7A /* EmojiKeyboardViewController.swift in Sources */,
 			);
@@ -534,8 +561,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				87FAAE4A1FCFD5430051F6BA /* KeyboardButton.swift in Sources */,
+				8750E49D1FE214B300241610 /* LetterButton.swift in Sources */,
 				874A73CA1FDC7FFB0074219C /* KeyboardViewController.swift in Sources */,
 				87C248331FD1070800C87862 /* Keyboard.swift in Sources */,
+				8750E49A1FE214AE00241610 /* Tappable.swift in Sources */,
+				8750E4A21FE215C000241610 /* BackspaceButton.swift in Sources */,
 				87F841311FD910BC00F35AF8 /* DocumentProxyDelegate.swift in Sources */,
 				87FAAE421FCFD53C0051F6BA /* DotMatrixKeyboardViewController.swift in Sources */,
 			);

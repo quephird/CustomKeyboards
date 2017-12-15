@@ -12,6 +12,7 @@ import AudioToolbox
 // TODO: Need to somehow "grow" button when touched like the system ones do
 class KeyboardButton : UIView {
     var labelText : String
+    var delegate: Tappable!
     var documentProxyDelegate : DocumentProxyDelegate
 
     // Needed to keep XCode happy
@@ -45,8 +46,7 @@ class KeyboardButton : UIView {
     }
 
     @objc func handleTap(_ recognizer: UITapGestureRecognizer) {
-        self.playInputClick()
-        self.documentProxyDelegate.updateText(buttonText: labelText)
+        delegate.handleTap(recognizer)
     }
     
 //    I have to resort to the following hack instead of using
