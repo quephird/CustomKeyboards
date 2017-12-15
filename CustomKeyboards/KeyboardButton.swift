@@ -11,6 +11,10 @@ import AudioToolbox
 
 // TODO: Need to somehow "grow" button when touched like the system ones do
 class KeyboardButton : UIView {
+    let clickSoundId = UInt32(1123)
+    let deleteSoundId = UInt32(1155)
+    let modifierSoundId = UInt32(1156)
+
     var labelText : String
     var delegate: Tappable!
     var documentProxyDelegate : DocumentProxyDelegate
@@ -67,9 +71,9 @@ class KeyboardButton : UIView {
 //    ┃┃┃┃┃🔥🔥🔥🔥
 //    ┻┻┻┻┻
     
-    func playInputClick() {
+    func playInputClick(soundId: UInt32) {
         DispatchQueue.global(qos: .default).async(execute: {
-            AudioServicesPlaySystemSound(1104)
+            AudioServicesPlaySystemSound(soundId)
         })
     }
 }
