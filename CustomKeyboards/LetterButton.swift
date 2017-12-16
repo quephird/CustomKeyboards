@@ -8,6 +8,7 @@
 
 import UIKit
 
+/// Specialized class for all letter keys
 class LetterButton : KeyboardButton {
     override func handleTap(_ recognizer: UITapGestureRecognizer) {
         self.playInputClick(soundId: self.clickSoundId)

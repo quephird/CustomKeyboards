@@ -8,6 +8,8 @@
 
 import UIKit
 
+/// For the time being, this class simply computes and holds various constants
+/// for laying out the buttons of the keyboard.
 class Keyboard {
     let topMargin = CGFloat(10.0)
     let bottomMargin = CGFloat(10.0)

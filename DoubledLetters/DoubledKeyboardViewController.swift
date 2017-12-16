@@ -8,6 +8,7 @@
 
 import UIKit
 
+/// Specialized view controller class for the doubled letters keyboard
 class DoubledKeyboardViewController : KeyboardViewController {
     override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
         super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
