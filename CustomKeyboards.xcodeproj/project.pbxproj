@@ -225,20 +225,20 @@
 		87BA96951FCCFA2400FD7E7A /* CustomKeyboards */ = {
 			isa = PBXGroup;
 			children = (
+				87BA96A21FCCFA2400FD7E7A /* Info.plist */,
 				87BA96961FCCFA2400FD7E7A /* AppDelegate.swift */,
-				87C248341FD63CFD00C87862 /* DocumentProxyDelegate.swift */,
+				87BA96981FCCFA2400FD7E7A /* ViewController.swift */,
 				87FAAE4B1FD0F1850051F6BA /* Keyboard.swift */,
+				874A73C71FDC78680074219C /* KeyboardViewController.swift */,
+				87C248341FD63CFD00C87862 /* DocumentProxyDelegate.swift */,
 				8748F7EC1FCD066700CBF5C5 /* KeyboardButton.swift */,
+				8750E4971FE0CE1A00241610 /* Tappable.swift */,
 				8750E49F1FE215B200241610 /* BackspaceButton.swift */,
 				8750E4951FE0C00000241610 /* LetterButton.swift */,
 				8750E4A41FE4A59F00241610 /* SpaceButton.swift */,
-				874A73C71FDC78680074219C /* KeyboardViewController.swift */,
-				8750E4971FE0CE1A00241610 /* Tappable.swift */,
-				87BA96981FCCFA2400FD7E7A /* ViewController.swift */,
+				87BA969F1FCCFA2400FD7E7A /* LaunchScreen.storyboard */,
 				87BA969A1FCCFA2400FD7E7A /* Main.storyboard */,
 				87BA969D1FCCFA2400FD7E7A /* Assets.xcassets */,
-				87BA969F1FCCFA2400FD7E7A /* LaunchScreen.storyboard */,
-				87BA96A21FCCFA2400FD7E7A /* Info.plist */,
 			);
 			path = CustomKeyboards;
 			sourceTree = "<group>";

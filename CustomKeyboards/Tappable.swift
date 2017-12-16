@@ -8,6 +8,8 @@
 
 import UIKit
 
+/// Protocol that declares all operations needed to be implemented
+/// for responding to button taps.
 @objc protocol Tappable {
     @objc func handleTap(_ recognizer: UITapGestureRecognizer)
 }

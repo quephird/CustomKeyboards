@@ -8,6 +8,7 @@
 
 import UIKit
 
+/// Specialized class for the spacebar
 class SpaceButton : KeyboardButton {
     override func handleTap(_ recognizer: UITapGestureRecognizer) {
         self.playInputClick(soundId: self.modifierSoundId)

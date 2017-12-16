@@ -9,7 +9,8 @@
 import UIKit
 import AudioToolbox
 
-// TODO: Need to somehow "grow" button when touched like the system ones do
+/// This is an abstract class of sorts, representing a base implementation for
+/// all button types for letters, the space bar, backspace, etc.
 class KeyboardButton : UIView {
     let clickSoundId = UInt32(1123)
     let deleteSoundId = UInt32(1155)

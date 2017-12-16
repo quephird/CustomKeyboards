@@ -7,6 +7,9 @@
 
 import UIKit
 
+/// This is a superclass for all keyboard view controllers, and is
+/// fully responsible for laying out the entire keyboard, as well
+/// as mutating the underlying text document.
 class KeyboardViewController: UIInputViewController {
     var nextKeyboardButton: UIButton!
     var letterButtonKeyRows : [[String]]!

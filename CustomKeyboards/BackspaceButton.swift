@@ -8,6 +8,7 @@
 
 import UIKit
 
+/// Specialized class for the backspace button
 class BackspaceButton : KeyboardButton {
     override func handleTap(_ recognizer: UITapGestureRecognizer) {
         // TODO: Figure out how to set pressed and unpressed colors
