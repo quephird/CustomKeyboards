@@ -28,6 +28,10 @@
 		8750E4A11FE215C000241610 /* BackspaceButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8750E49F1FE215B200241610 /* BackspaceButton.swift */; };
 		8750E4A21FE215C000241610 /* BackspaceButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8750E49F1FE215B200241610 /* BackspaceButton.swift */; };
 		8750E4A31FE215C100241610 /* BackspaceButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8750E49F1FE215B200241610 /* BackspaceButton.swift */; };
+		8750E4A51FE4A59F00241610 /* SpaceButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8750E4A41FE4A59F00241610 /* SpaceButton.swift */; };
+		8750E4A61FE4A5E600241610 /* SpaceButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8750E4A41FE4A59F00241610 /* SpaceButton.swift */; };
+		8750E4A71FE4A5E600241610 /* SpaceButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8750E4A41FE4A59F00241610 /* SpaceButton.swift */; };
+		8750E4A81FE4A5E700241610 /* SpaceButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8750E4A41FE4A59F00241610 /* SpaceButton.swift */; };
 		87BA96971FCCFA2400FD7E7A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87BA96961FCCFA2400FD7E7A /* AppDelegate.swift */; };
 		87BA96991FCCFA2400FD7E7A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87BA96981FCCFA2400FD7E7A /* ViewController.swift */; };
 		87BA969C1FCCFA2400FD7E7A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 87BA969A1FCCFA2400FD7E7A /* Main.storyboard */; };
@@ -113,6 +117,7 @@
 		8750E4951FE0C00000241610 /* LetterButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LetterButton.swift; sourceTree = "<group>"; };
 		8750E4971FE0CE1A00241610 /* Tappable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tappable.swift; sourceTree = "<group>"; };
 		8750E49F1FE215B200241610 /* BackspaceButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackspaceButton.swift; sourceTree = "<group>"; };
+		8750E4A41FE4A59F00241610 /* SpaceButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpaceButton.swift; sourceTree = "<group>"; };
 		87BA96931FCCFA2400FD7E7A /* CustomKeyboards.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CustomKeyboards.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		87BA96961FCCFA2400FD7E7A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		87BA96981FCCFA2400FD7E7A /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -226,6 +231,7 @@
 				8748F7EC1FCD066700CBF5C5 /* KeyboardButton.swift */,
 				8750E49F1FE215B200241610 /* BackspaceButton.swift */,
 				8750E4951FE0C00000241610 /* LetterButton.swift */,
+				8750E4A41FE4A59F00241610 /* SpaceButton.swift */,
 				874A73C71FDC78680074219C /* KeyboardViewController.swift */,
 				8750E4971FE0CE1A00241610 /* Tappable.swift */,
 				87BA96981FCCFA2400FD7E7A /* ViewController.swift */,
@@ -506,6 +512,7 @@
 				8750E4A31FE215C100241610 /* BackspaceButton.swift in Sources */,
 				8750E48E1FDCB68E00241610 /* Keyboard.swift in Sources */,
 				874A73DA1FDCB16C0074219C /* KeyboardViewController.swift in Sources */,
+				8750E4A81FE4A5E700241610 /* SpaceButton.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -521,6 +528,7 @@
 				87F8412F1FD9106D00F35AF8 /* DocumentProxyDelegate.swift in Sources */,
 				87FAAE4C1FD0F1850051F6BA /* Keyboard.swift in Sources */,
 				87BA96971FCCFA2400FD7E7A /* AppDelegate.swift in Sources */,
+				8750E4A51FE4A59F00241610 /* SpaceButton.swift in Sources */,
 				8750E4A01FE215B200241610 /* BackspaceButton.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -553,6 +561,7 @@
 				8750E4A11FE215C000241610 /* BackspaceButton.swift in Sources */,
 				87C248361FD6400F00C87862 /* DocumentProxyDelegate.swift in Sources */,
 				87BA96CB1FCCFA3B00FD7E7A /* EmojiKeyboardViewController.swift in Sources */,
+				8750E4A61FE4A5E600241610 /* SpaceButton.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -568,6 +577,7 @@
 				8750E4A21FE215C000241610 /* BackspaceButton.swift in Sources */,
 				87F841311FD910BC00F35AF8 /* DocumentProxyDelegate.swift in Sources */,
 				87FAAE421FCFD53C0051F6BA /* DotMatrixKeyboardViewController.swift in Sources */,
+				8750E4A71FE4A5E600241610 /* SpaceButton.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

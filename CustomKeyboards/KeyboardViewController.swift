@@ -10,7 +10,8 @@ import UIKit
 class KeyboardViewController: UIInputViewController {
     var nextKeyboardButton: UIButton!
     var letterButtonKeyRows : [[String]]!
-    var deleteButton : String!
+    var deleteButtonLabel : String!
+    var spaceButtonLabel : String!
     var keyboard : Keyboard!
     
     func makeButtonRow(_ buttonKeys: [String]) -> [UIView] {
@@ -64,7 +65,7 @@ class KeyboardViewController: UIInputViewController {
             }
         }
         
-        let spacebar = LetterButton("　", height: self.keyboard.buttonHeight, documentProxyDelegate: self)
+        let spacebar = SpaceButton(self.spaceButtonLabel, height: self.keyboard.buttonHeight, documentProxyDelegate: self)
         self.view.addSubview(spacebar)
         // TODO: Define the magic number 120.0 somewhere
         spacebar.leadingAnchor.constraint(equalTo: self.view.leadingAnchor, constant: 120.0).isActive = true
@@ -74,7 +75,7 @@ class KeyboardViewController: UIInputViewController {
         spacebar.trailingAnchor.constraint(equalTo: self.view.trailingAnchor, constant: -120.0).isActive = true
         spacebar.bottomAnchor.constraint(equalTo: self.view.bottomAnchor, constant: -self.keyboard.bottomMargin).isActive = true
         
-        let backspace = BackspaceButton(self.deleteButton, height: self.keyboard.buttonHeight, documentProxyDelegate: self)
+        let backspace = BackspaceButton(self.deleteButtonLabel, height: self.keyboard.buttonHeight, documentProxyDelegate: self)
         self.view.addSubview(backspace)
         backspace.widthAnchor.constraint(equalTo: letterButtonRows[2][0].widthAnchor).isActive = true
         backspace.trailingAnchor.constraint(equalTo: letterButtonRows[0][letterButtonRows[0].count-1].trailingAnchor).isActive = true

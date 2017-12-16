@@ -16,7 +16,8 @@ class DotMatrixKeyboardViewController : KeyboardViewController {
             ["⡮⢵", "⣚⡣", "⣏⡱", "⡟⠋", "⢎⡭", "⡗⢺", "⢄⡸", "⡗⢎", "⣇⣀"],
             ["⣩⣋", "⡱⢎", "⢎⣉", "⢇⡸", "⣟⡳", "⡗⢼", "⡟⢻"]
         ]
-        self.deleteButton = "⢾⠶"
+        self.deleteButtonLabel = "⢾⠶"
+        self.spaceButtonLabel = "　"
     }
     
     required init?(coder aDecoder: NSCoder) {
