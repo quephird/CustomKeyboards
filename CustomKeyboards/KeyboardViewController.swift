@@ -11,19 +11,19 @@ import UIKit
 /// fully responsible for laying out the entire keyboard, as well
 /// as mutating the underlying text document.
 class KeyboardViewController: UIInputViewController {
-    var nextKeyboardButton: UIButton!
     var letterButtonKeyRows : [[String]]!
     var deleteButtonLabel : String!
     var spaceButtonLabel : String!
     var keyboard : Keyboard!
     
     func makeButtonRow(_ buttonKeys: [String]) -> [UIView] {
-        let newButtons = buttonKeys.map { LetterButton($0, height: self.keyboard.buttonHeight, documentProxyDelegate: self) }
-        let additionalMargin = (keyboard.keyboardWidth - self.keyboard.leftMargin - self.keyboard.rightMargin)*(10.0-CGFloat(newButtons.count))/20.0
+        let newButtons = buttonKeys.map { LetterButton($0, proxyDelegate: self) }
+        let additionalMargin = (self.keyboard.keyboardWidth - self.keyboard.leftMargin - self.keyboard.rightMargin)*(10.0-CGFloat(newButtons.count))/20.0
         
         for (index, button) in newButtons.enumerated() {
             self.view.addSubview(button)
             
+            button.heightAnchor.constraint(equalToConstant: self.keyboard.buttonHeight).isActive = true
             if index == 0 {
                 button.leadingAnchor.constraint(equalTo: self.view.leadingAnchor, constant: keyboard.leftMargin+additionalMargin).isActive = true
             } else if index < newButtons.count-1 {
@@ -40,26 +40,9 @@ class KeyboardViewController: UIInputViewController {
         
         return newButtons
     }
-    
-    // TODO: Make this a UIView and incorporate into fourth row of buttons
-    func makeNextKeyboardButton() {
-        self.nextKeyboardButton = UIButton(type: .system)
-        
-        self.nextKeyboardButton.setTitle(NSLocalizedString("🌐", comment: "Title for 'Next Keyboard' button"), for: [])
-        self.nextKeyboardButton.sizeToFit()
-        self.nextKeyboardButton.translatesAutoresizingMaskIntoConstraints = false
-        self.nextKeyboardButton.addTarget(self, action: #selector(handleInputModeList(from:with:)), for: .allTouchEvents)
-        
-        self.view.addSubview(self.nextKeyboardButton)
-        self.nextKeyboardButton.leftAnchor.constraint(equalTo: self.view.leftAnchor).isActive = true
-        self.nextKeyboardButton.bottomAnchor.constraint(equalTo: self.view.bottomAnchor).isActive = true
-    }
-    
-    func makeKeyboard() {
-        self.keyboard = Keyboard(self.letterButtonKeyRows)
-        
+
+    func makeLetterButtons() {
         let letterButtonRows = letterButtonKeyRows.map { makeButtonRow($0) }
-        
         for (index, buttonRow) in letterButtonRows.enumerated() {
             if index == 0 {
                 buttonRow[0].topAnchor.constraint(equalTo: self.view.topAnchor, constant: self.keyboard.topMargin).isActive = true
@@ -67,52 +50,67 @@ class KeyboardViewController: UIInputViewController {
                 buttonRow[0].topAnchor.constraint(equalTo: letterButtonRows[index-1][0].bottomAnchor, constant: self.keyboard.verticalSpaceBetweenButtons).isActive = true
             }
         }
-        
-        let spacebar = SpaceButton(self.spaceButtonLabel, height: self.keyboard.buttonHeight, documentProxyDelegate: self)
-        self.view.addSubview(spacebar)
-        // TODO: Define the magic number 120.0 somewhere
-        spacebar.leadingAnchor.constraint(equalTo: self.view.leadingAnchor, constant: 120.0).isActive = true
-        // TODO: This is super hacky
-        spacebar.topAnchor.constraint(equalTo: letterButtonRows[2][0].bottomAnchor, constant: self.keyboard.verticalSpaceBetweenButtons).isActive = true
-        // TODO: Define the magic number -120.0 somewhere
-        spacebar.trailingAnchor.constraint(equalTo: self.view.trailingAnchor, constant: -120.0).isActive = true
-        spacebar.bottomAnchor.constraint(equalTo: self.view.bottomAnchor, constant: -self.keyboard.bottomMargin).isActive = true
-        
-        let backspace = BackspaceButton(self.deleteButtonLabel, height: self.keyboard.buttonHeight, documentProxyDelegate: self)
-        self.view.addSubview(backspace)
-        backspace.widthAnchor.constraint(equalTo: letterButtonRows[2][0].widthAnchor).isActive = true
-        backspace.trailingAnchor.constraint(equalTo: letterButtonRows[0][letterButtonRows[0].count-1].trailingAnchor).isActive = true
-        backspace.topAnchor.constraint(equalTo: letterButtonRows[2][0].topAnchor).isActive = true
+    }
 
+    func makeBackspaceButton() {
+        let backspace = BackspaceButton(self.deleteButtonLabel, proxyDelegate: self)
+        let bottomAnchorConstant = keyboard.buttonHeight + 2*keyboard.verticalSpaceBetweenButtons
+        self.view.addSubview(backspace)
+        backspace.heightAnchor.constraint(equalToConstant: self.keyboard.buttonHeight).isActive = true
+        // Backspace key is supposed to be square in portrait mode
+        backspace.widthAnchor.constraint(equalToConstant: keyboard.buttonHeight).isActive = true
+        backspace.trailingAnchor.constraint(equalTo: self.view.trailingAnchor, constant: -keyboard.rightMargin).isActive = true
+        backspace.bottomAnchor.constraint(equalTo: self.view.bottomAnchor, constant: -bottomAnchorConstant).isActive = true
+    }
+
+    func makeSpaceButton() {
+        let spacebar = SpaceButton(self.spaceButtonLabel, proxyDelegate: self)
+        let spacebarLeftMargin = 4*keyboard.buttonWidth + 2*keyboard.horizontalSpaceBetweenButtons
+        let spacebarRightMargin = 3*keyboard.buttonWidth + keyboard.horizontalSpaceBetweenButtons
+        self.view.addSubview(spacebar)
+        spacebar.heightAnchor.constraint(equalToConstant: self.keyboard.buttonHeight).isActive = true
+        spacebar.leadingAnchor.constraint(equalTo: self.view.leadingAnchor, constant: spacebarLeftMargin).isActive = true
+        spacebar.trailingAnchor.constraint(equalTo: self.view.trailingAnchor, constant: -spacebarRightMargin).isActive = true
+        spacebar.bottomAnchor.constraint(equalTo: self.view.bottomAnchor, constant: -self.keyboard.bottomMargin).isActive = true
+    }
+
+    func makeNextKeyboardButton() {
+        let nextKeyboard = NextKeyboardButton("🌐", proxyDelegate: self)
+        let nextKeyboardMargin = 1.5*keyboard.buttonWidth + keyboard.horizontalSpaceBetweenButtons
+        self.view.addSubview(nextKeyboard)
+        nextKeyboard.heightAnchor.constraint(equalToConstant: self.keyboard.buttonHeight).isActive = true
+        nextKeyboard.leadingAnchor.constraint(equalTo: self.view.leadingAnchor, constant: nextKeyboardMargin).isActive = true
+        // Next keyboard key is supposed to be square in portrait mode
+        nextKeyboard.widthAnchor.constraint(equalToConstant: keyboard.buttonHeight).isActive = true
+        nextKeyboard.bottomAnchor.constraint(equalTo: self.view.bottomAnchor, constant: -keyboard.bottomMargin).isActive = true
+    }
+    
+    func makeKeyboard() {
+        self.keyboard = Keyboard(UIScreen.main.bounds.width)
+        
+        self.makeLetterButtons()
+        self.makeBackspaceButton()
         self.makeNextKeyboardButton()
+        self.makeSpaceButton()
     }
 
     override func viewDidLoad() {
         super.viewDidLoad()
         self.makeKeyboard()
     }
-
-    override func textDidChange(_ textInput: UITextInput?) {
-        // The app has just changed the document's contents, the document context has been updated.
-        
-        var textColor: UIColor
-        let proxy = self.textDocumentProxy
-        if proxy.keyboardAppearance == UIKeyboardAppearance.dark {
-            textColor = UIColor.white
-        } else {
-            textColor = UIColor.black
-        }
-        self.nextKeyboardButton.setTitleColor(textColor, for: [])
-    }
 }
 
-extension KeyboardViewController : DocumentProxyDelegate {
+extension KeyboardViewController : KeyboardViewControllerProxy {
     func insertText(buttonText: String) {
         self.textDocumentProxy.insertText(buttonText)
     }
 
     func deleteText() {
         self.textDocumentProxy.deleteBackward()
+    }
+
+    func advanceToNextKeyboard() {
+        self.advanceToNextInputMode()
     }
 }
 

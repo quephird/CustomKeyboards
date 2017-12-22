@@ -19,24 +19,20 @@ class Keyboard {
     let horizontalSpaceBetweenButtons = CGFloat(7.0)
     let verticalSpaceBetweenButtons = CGFloat(10.0)
 
-    var keyboardWidth : CGFloat
-    var keyboardHeight : CGFloat
+    var keyboardWidth : CGFloat!
+    var keyboardHeight : CGFloat!
 
-    var buttonWidth : CGFloat
-    var buttonHeight : CGFloat
+    var buttonWidth : CGFloat!
+    var buttonHeight : CGFloat!
 
-    var letterRows : [[String]]
-
-    init(_ letterRows : [[String]]) {
-        self.letterRows = letterRows
-        
-        self.keyboardWidth = CGFloat(320.0)
+    init(_ width: CGFloat) {
+        self.keyboardWidth = width
         self.keyboardHeight = CGFloat(226.0)
 
-        self.buttonWidth = self.keyboardWidth
-            - CGFloat(self.letterRows[0].count-1)*horizontalSpaceBetweenButtons
+        self.buttonWidth = (self.keyboardWidth
+            - 9*self.horizontalSpaceBetweenButtons
             - self.leftMargin
-            - self.rightMargin
+            - self.rightMargin)/10.0
         self.buttonHeight = (self.keyboardHeight - topMargin - bottomMargin - 3*self.verticalSpaceBetweenButtons)/4.0
     }
 }

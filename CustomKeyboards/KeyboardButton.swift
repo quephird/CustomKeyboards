@@ -18,16 +18,16 @@ class KeyboardButton : UIView {
 
     var labelText : String
     var delegate: Tappable!
-    var documentProxyDelegate : DocumentProxyDelegate
+    var proxyDelegate : KeyboardViewControllerProxy
 
     // Needed to keep XCode happy
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
 
-    init(_ labelText: String, height: CGFloat, documentProxyDelegate: DocumentProxyDelegate) {
+    init(_ labelText: String, proxyDelegate: KeyboardViewControllerProxy) {
         self.labelText = labelText
-        self.documentProxyDelegate = documentProxyDelegate
+        self.proxyDelegate = proxyDelegate
         super.init(frame: CGRect.zero)
 
         let newButtonLabel = UILabel()
@@ -37,7 +37,6 @@ class KeyboardButton : UIView {
         newButtonLabel.centerXAnchor.constraint(equalTo: self.centerXAnchor).isActive = true
         newButtonLabel.centerYAnchor.constraint(equalTo: self.centerYAnchor).isActive = true
         
-        self.heightAnchor.constraint(equalToConstant: height).isActive = true
         self.backgroundColor = UIColor.init(white: 1, alpha: 1)
         self.translatesAutoresizingMaskIntoConstraints = false
         self.layer.cornerRadius = 4.0
