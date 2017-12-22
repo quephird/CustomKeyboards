@@ -207,7 +207,7 @@
 				87BA96951FCCFA2400FD7E7A /* CustomKeyboards */,
 				87BA96AA1FCCFA2400FD7E7A /* CustomKeyboardsTests */,
 				87BA96B51FCCFA2400FD7E7A /* CustomKeyboardsUITests */,
-				87BA96C91FCCFA3B00FD7E7A /* Emoji Letters */,
+				87BA96C91FCCFA3B00FD7E7A /* EmojiLetters */,
 				87FAAE401FCFD53C0051F6BA /* DotMatrixLetters */,
 				874A73D01FDCB1300074219C /* DoubledLetters */,
 				87BA96941FCCFA2400FD7E7A /* Products */,
@@ -267,13 +267,13 @@
 			path = CustomKeyboardsUITests;
 			sourceTree = "<group>";
 		};
-		87BA96C91FCCFA3B00FD7E7A /* Emoji Letters */ = {
+		87BA96C91FCCFA3B00FD7E7A /* EmojiLetters */ = {
 			isa = PBXGroup;
 			children = (
 				87BA96CA1FCCFA3B00FD7E7A /* EmojiKeyboardViewController.swift */,
 				87BA96CC1FCCFA3B00FD7E7A /* Info.plist */,
 			);
-			path = "Emoji Letters";
+			path = EmojiLetters;
 			sourceTree = "<group>";
 		};
 		87FAAE401FCFD53C0051F6BA /* DotMatrixLetters */ = {
@@ -881,7 +881,7 @@
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = GARV9392W2;
-				INFOPLIST_FILE = "Emoji Letters/Info.plist";
+				INFOPLIST_FILE = EmojiLetters/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.quephird.CustomKeyboards.Emoji-Letters";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -896,7 +896,7 @@
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = GARV9392W2;
-				INFOPLIST_FILE = "Emoji Letters/Info.plist";
+				INFOPLIST_FILE = EmojiLetters/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.quephird.CustomKeyboards.Emoji-Letters";
 				PRODUCT_NAME = "$(TARGET_NAME)";
