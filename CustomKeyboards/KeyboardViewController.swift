@@ -14,6 +14,7 @@ class KeyboardViewController: UIInputViewController {
     var letterButtonKeyRows : [[String]]!
     var deleteButtonLabel : String!
     var spaceButtonLabel : String!
+    var shiftButtonLabel : String!
     var keyboard : Keyboard!
     
     func makeButtonRow(_ buttonKeys: [String]) -> [UIView] {
@@ -84,14 +85,26 @@ class KeyboardViewController: UIInputViewController {
         nextKeyboard.widthAnchor.constraint(equalToConstant: keyboard.buttonHeight).isActive = true
         nextKeyboard.bottomAnchor.constraint(equalTo: self.view.bottomAnchor, constant: -keyboard.bottomMargin).isActive = true
     }
-    
+
+    func makeShiftButton() {
+        let shiftKey = ShiftButton(self.shiftButtonLabel, proxyDelegate: self)
+        let bottomAnchorConstant = keyboard.buttonHeight + 2*keyboard.verticalSpaceBetweenButtons
+        self.view.addSubview(shiftKey)
+        shiftKey.heightAnchor.constraint(equalToConstant: self.keyboard.buttonHeight).isActive = true
+        // Backspace key is supposed to be square in portrait mode
+        shiftKey.widthAnchor.constraint(equalToConstant: keyboard.buttonHeight).isActive = true
+        shiftKey.leadingAnchor.constraint(equalTo: self.view.leadingAnchor, constant: keyboard.leftMargin).isActive = true
+        shiftKey.bottomAnchor.constraint(equalTo: self.view.bottomAnchor, constant: -bottomAnchorConstant).isActive = true
+    }
+
     func makeKeyboard() {
         self.keyboard = Keyboard(UIScreen.main.bounds.width)
-        
+
         self.makeLetterButtons()
         self.makeBackspaceButton()
         self.makeNextKeyboardButton()
         self.makeSpaceButton()
+        self.makeShiftButton()
     }
 
     override func viewDidLoad() {
@@ -111,6 +124,10 @@ extension KeyboardViewController : KeyboardViewControllerProxy {
 
     func advanceToNextKeyboard() {
         self.advanceToNextInputMode()
+    }
+
+    func toggleCase() {
+        // TODO: track state of button case; update button labels
     }
 }
 
