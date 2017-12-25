@@ -20,11 +20,10 @@ class EmojiKeyboardViewController: KeyboardViewController {
         ]
         self.deleteButtonLabel = "🔙"
         self.spaceButtonLabel = "　"
-        self.shiftButtonLabel = "⬆️"
+        self.shiftButtonLabel = ""
     }
     
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
 }
-

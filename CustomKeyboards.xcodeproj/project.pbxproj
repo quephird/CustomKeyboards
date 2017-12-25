@@ -23,6 +23,18 @@
 		8736FF441FF18B5E00348F33 /* SpaceButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8750E4A41FE4A59F00241610 /* SpaceButton.swift */; };
 		8736FF451FF18B6100348F33 /* NextKeyboardButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8750E4AB1FE5BDB100241610 /* NextKeyboardButton.swift */; };
 		8736FF461FF18B6400348F33 /* ShiftButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8736FF291FEEF17100348F33 /* ShiftButton.swift */; };
+		8736FF4E1FF1BB6800348F33 /* ScrabbleKeyboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8736FF4D1FF1BB6800348F33 /* ScrabbleKeyboardViewController.swift */; };
+		8736FF521FF1BB6800348F33 /* ScrabbleLetters.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 8736FF4B1FF1BB6800348F33 /* ScrabbleLetters.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		8736FF561FF1BBD500348F33 /* Keyboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87FAAE4B1FD0F1850051F6BA /* Keyboard.swift */; };
+		8736FF571FF1BBD500348F33 /* KeyboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 874A73C71FDC78680074219C /* KeyboardViewController.swift */; };
+		8736FF581FF1BBD500348F33 /* KeyboardViewControllerProxy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87C248341FD63CFD00C87862 /* KeyboardViewControllerProxy.swift */; };
+		8736FF591FF1BBD500348F33 /* KeyboardButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8748F7EC1FCD066700CBF5C5 /* KeyboardButton.swift */; };
+		8736FF5A1FF1BBD500348F33 /* Tappable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8750E4971FE0CE1A00241610 /* Tappable.swift */; };
+		8736FF5B1FF1BBD500348F33 /* BackspaceButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8750E49F1FE215B200241610 /* BackspaceButton.swift */; };
+		8736FF5C1FF1BBD500348F33 /* LetterButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8750E4951FE0C00000241610 /* LetterButton.swift */; };
+		8736FF5D1FF1BBD500348F33 /* SpaceButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8750E4A41FE4A59F00241610 /* SpaceButton.swift */; };
+		8736FF5E1FF1BBD500348F33 /* NextKeyboardButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8750E4AB1FE5BDB100241610 /* NextKeyboardButton.swift */; };
+		8736FF5F1FF1BBD500348F33 /* ShiftButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8736FF291FEEF17100348F33 /* ShiftButton.swift */; };
 		874A73C81FDC78680074219C /* KeyboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 874A73C71FDC78680074219C /* KeyboardViewController.swift */; };
 		874A73C91FDC78FE0074219C /* KeyboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 874A73C71FDC78680074219C /* KeyboardViewController.swift */; };
 		874A73CA1FDC7FFB0074219C /* KeyboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 874A73C71FDC78680074219C /* KeyboardViewController.swift */; };
@@ -82,6 +94,13 @@
 			remoteGlobalIDString = 8736FF311FF18B3600348F33;
 			remoteInfo = FrakturLetters;
 		};
+		8736FF501FF1BB6800348F33 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 87BA968B1FCCFA2400FD7E7A /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 8736FF4A1FF1BB6800348F33;
+			remoteInfo = ScrabbleLetters;
+		};
 		874A73D41FDCB1300074219C /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 87BA968B1FCCFA2400FD7E7A /* Project object */;
@@ -129,6 +148,7 @@
 				87BA96CF1FCCFA3B00FD7E7A /* EmojiLetters.appex in Embed App Extensions */,
 				87FAAE461FCFD53C0051F6BA /* DotMatrixLetters.appex in Embed App Extensions */,
 				8736FF391FF18B3600348F33 /* FrakturLetters.appex in Embed App Extensions */,
+				8736FF521FF1BB6800348F33 /* ScrabbleLetters.appex in Embed App Extensions */,
 				874A73D61FDCB1300074219C /* DoubledLetters.appex in Embed App Extensions */,
 			);
 			name = "Embed App Extensions";
@@ -141,6 +161,9 @@
 		8736FF321FF18B3600348F33 /* FrakturLetters.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = FrakturLetters.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 		8736FF341FF18B3600348F33 /* FrakturKeyboardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FrakturKeyboardViewController.swift; sourceTree = "<group>"; };
 		8736FF361FF18B3600348F33 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8736FF4B1FF1BB6800348F33 /* ScrabbleLetters.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = ScrabbleLetters.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		8736FF4D1FF1BB6800348F33 /* ScrabbleKeyboardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScrabbleKeyboardViewController.swift; sourceTree = "<group>"; };
+		8736FF4F1FF1BB6800348F33 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8748F7EC1FCD066700CBF5C5 /* KeyboardButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardButton.swift; sourceTree = "<group>"; };
 		874A73C71FDC78680074219C /* KeyboardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardViewController.swift; sourceTree = "<group>"; };
 		874A73CF1FDCB1300074219C /* DoubledLetters.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = DoubledLetters.appex; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -176,6 +199,13 @@
 
 /* Begin PBXFrameworksBuildPhase section */
 		8736FF2F1FF18B3600348F33 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8736FF481FF1BB6800348F33 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -236,6 +266,15 @@
 			path = FrakturLetters;
 			sourceTree = "<group>";
 		};
+		8736FF4C1FF1BB6800348F33 /* ScrabbleLetters */ = {
+			isa = PBXGroup;
+			children = (
+				8736FF4D1FF1BB6800348F33 /* ScrabbleKeyboardViewController.swift */,
+				8736FF4F1FF1BB6800348F33 /* Info.plist */,
+			);
+			path = ScrabbleLetters;
+			sourceTree = "<group>";
+		};
 		874A73D01FDCB1300074219C /* DoubledLetters */ = {
 			isa = PBXGroup;
 			children = (
@@ -255,6 +294,7 @@
 				87FAAE401FCFD53C0051F6BA /* DotMatrixLetters */,
 				874A73D01FDCB1300074219C /* DoubledLetters */,
 				8736FF331FF18B3600348F33 /* FrakturLetters */,
+				8736FF4C1FF1BB6800348F33 /* ScrabbleLetters */,
 				87BA96941FCCFA2400FD7E7A /* Products */,
 			);
 			sourceTree = "<group>";
@@ -269,6 +309,7 @@
 				87FAAE3F1FCFD53C0051F6BA /* DotMatrixLetters.appex */,
 				874A73CF1FDCB1300074219C /* DoubledLetters.appex */,
 				8736FF321FF18B3600348F33 /* FrakturLetters.appex */,
+				8736FF4B1FF1BB6800348F33 /* ScrabbleLetters.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -352,6 +393,23 @@
 			productReference = 8736FF321FF18B3600348F33 /* FrakturLetters.appex */;
 			productType = "com.apple.product-type.app-extension";
 		};
+		8736FF4A1FF1BB6800348F33 /* ScrabbleLetters */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 8736FF551FF1BB6800348F33 /* Build configuration list for PBXNativeTarget "ScrabbleLetters" */;
+			buildPhases = (
+				8736FF471FF1BB6800348F33 /* Sources */,
+				8736FF481FF1BB6800348F33 /* Frameworks */,
+				8736FF491FF1BB6800348F33 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = ScrabbleLetters;
+			productName = ScrabbleLetters;
+			productReference = 8736FF4B1FF1BB6800348F33 /* ScrabbleLetters.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
 		874A73CE1FDCB1300074219C /* DoubledLetters */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 874A73D91FDCB1300074219C /* Build configuration list for PBXNativeTarget "DoubledLetters" */;
@@ -385,6 +443,7 @@
 				87FAAE451FCFD53C0051F6BA /* PBXTargetDependency */,
 				874A73D51FDCB1300074219C /* PBXTargetDependency */,
 				8736FF381FF18B3600348F33 /* PBXTargetDependency */,
+				8736FF511FF1BB6800348F33 /* PBXTargetDependency */,
 			);
 			name = CustomKeyboards;
 			productName = CustomKeyboards;
@@ -475,6 +534,10 @@
 						CreatedOnToolsVersion = 9.2;
 						ProvisioningStyle = Automatic;
 					};
+					8736FF4A1FF1BB6800348F33 = {
+						CreatedOnToolsVersion = 9.2;
+						ProvisioningStyle = Automatic;
+					};
 					874A73CE1FDCB1300074219C = {
 						CreatedOnToolsVersion = 9.1;
 						ProvisioningStyle = Automatic;
@@ -523,12 +586,20 @@
 				87FAAE3E1FCFD53C0051F6BA /* DotMatrixLetters */,
 				874A73CE1FDCB1300074219C /* DoubledLetters */,
 				8736FF311FF18B3600348F33 /* FrakturLetters */,
+				8736FF4A1FF1BB6800348F33 /* ScrabbleLetters */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
 		8736FF301FF18B3600348F33 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8736FF491FF1BB6800348F33 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -598,6 +669,24 @@
 				8736FF421FF18B5900348F33 /* BackspaceButton.swift in Sources */,
 				8736FF351FF18B3600348F33 /* FrakturKeyboardViewController.swift in Sources */,
 				8736FF441FF18B5E00348F33 /* SpaceButton.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8736FF471FF1BB6800348F33 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8736FF591FF1BBD500348F33 /* KeyboardButton.swift in Sources */,
+				8736FF5C1FF1BBD500348F33 /* LetterButton.swift in Sources */,
+				8736FF561FF1BBD500348F33 /* Keyboard.swift in Sources */,
+				8736FF5E1FF1BBD500348F33 /* NextKeyboardButton.swift in Sources */,
+				8736FF5F1FF1BBD500348F33 /* ShiftButton.swift in Sources */,
+				8736FF5A1FF1BBD500348F33 /* Tappable.swift in Sources */,
+				8736FF571FF1BBD500348F33 /* KeyboardViewController.swift in Sources */,
+				8736FF581FF1BBD500348F33 /* KeyboardViewControllerProxy.swift in Sources */,
+				8736FF5B1FF1BBD500348F33 /* BackspaceButton.swift in Sources */,
+				8736FF4E1FF1BB6800348F33 /* ScrabbleKeyboardViewController.swift in Sources */,
+				8736FF5D1FF1BBD500348F33 /* SpaceButton.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -698,6 +787,11 @@
 			target = 8736FF311FF18B3600348F33 /* FrakturLetters */;
 			targetProxy = 8736FF371FF18B3600348F33 /* PBXContainerItemProxy */;
 		};
+		8736FF511FF1BB6800348F33 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 8736FF4A1FF1BB6800348F33 /* ScrabbleLetters */;
+			targetProxy = 8736FF501FF1BB6800348F33 /* PBXContainerItemProxy */;
+		};
 		874A73D51FDCB1300074219C /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 874A73CE1FDCB1300074219C /* DoubledLetters */;
@@ -768,6 +862,36 @@
 				INFOPLIST_FILE = FrakturLetters/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.quephird.CustomKeyboards.FrakturLetters;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		8736FF531FF1BB6800348F33 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = GARV9392W2;
+				INFOPLIST_FILE = ScrabbleLetters/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.quephird.CustomKeyboards.ScrabbleLetters;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		8736FF541FF1BB6800348F33 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = GARV9392W2;
+				INFOPLIST_FILE = ScrabbleLetters/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.quephird.CustomKeyboards.ScrabbleLetters;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 4.0;
@@ -1080,6 +1204,15 @@
 			buildConfigurations = (
 				8736FF3A1FF18B3600348F33 /* Debug */,
 				8736FF3B1FF18B3600348F33 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		8736FF551FF1BB6800348F33 /* Build configuration list for PBXNativeTarget "ScrabbleLetters" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8736FF531FF1BB6800348F33 /* Debug */,
+				8736FF541FF1BB6800348F33 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

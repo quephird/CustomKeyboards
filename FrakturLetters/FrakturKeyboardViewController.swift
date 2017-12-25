@@ -1,5 +1,5 @@
 //
-//  KeyboardViewController.swift
+//  FrakturKeyboardViewController.swift
 //  FrakturLetters
 //
 //  Created by danielle kefford on 12/25/17.
