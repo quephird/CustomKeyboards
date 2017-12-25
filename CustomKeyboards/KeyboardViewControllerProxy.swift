@@ -14,4 +14,6 @@ protocol KeyboardViewControllerProxy {
     mutating func deleteText()
 
     mutating func advanceToNextKeyboard()
+
+    mutating func toggleCase()
 }

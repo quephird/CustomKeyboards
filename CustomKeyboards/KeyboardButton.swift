@@ -16,7 +16,8 @@ class KeyboardButton : UIView {
     let deleteSoundId = UInt32(1155)
     let modifierSoundId = UInt32(1156)
 
-    var labelText : String
+    var buttonLabel : UILabel
+    // TODO: Rename these two fields to better distinguish them
     var delegate: Tappable!
     var proxyDelegate : KeyboardViewControllerProxy
 
@@ -26,16 +27,15 @@ class KeyboardButton : UIView {
     }
 
     init(_ labelText: String, proxyDelegate: KeyboardViewControllerProxy) {
-        self.labelText = labelText
+        self.buttonLabel = UILabel()
         self.proxyDelegate = proxyDelegate
         super.init(frame: CGRect.zero)
 
-        let newButtonLabel = UILabel()
-        newButtonLabel.translatesAutoresizingMaskIntoConstraints = false
-        newButtonLabel.text = labelText
-        self.addSubview(newButtonLabel)
-        newButtonLabel.centerXAnchor.constraint(equalTo: self.centerXAnchor).isActive = true
-        newButtonLabel.centerYAnchor.constraint(equalTo: self.centerYAnchor).isActive = true
+        self.buttonLabel.translatesAutoresizingMaskIntoConstraints = false
+        self.buttonLabel.text = labelText
+        self.addSubview(self.buttonLabel)
+        self.buttonLabel.centerXAnchor.constraint(equalTo: self.centerXAnchor).isActive = true
+        self.buttonLabel.centerYAnchor.constraint(equalTo: self.centerYAnchor).isActive = true
         
         self.backgroundColor = UIColor.init(white: 1, alpha: 1)
         self.translatesAutoresizingMaskIntoConstraints = false

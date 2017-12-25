@@ -11,12 +11,15 @@ import UIKit
 /// fully responsible for laying out the entire keyboard, as well
 /// as mutating the underlying text document.
 class KeyboardViewController: UIInputViewController {
-    var letterButtonKeyRows : [[String]]!
+    // TODO: Figure out how to remove the need to have references to all these things except the keyboard and letterButtons objects
+    var letterButtonKeyRows : [[(String, String)]]!
     var deleteButtonLabel : String!
     var spaceButtonLabel : String!
+    var shiftButtonLabel : String!
     var keyboard : Keyboard!
-    
-    func makeButtonRow(_ buttonKeys: [String]) -> [UIView] {
+    var letterButtons : [LetterButton]!
+
+    func makeButtonRow(_ buttonKeys: [(String, String)]) -> [LetterButton] {
         let newButtons = buttonKeys.map { LetterButton($0, proxyDelegate: self) }
         let additionalMargin = (self.keyboard.keyboardWidth - self.keyboard.leftMargin - self.keyboard.rightMargin)*(10.0-CGFloat(newButtons.count))/20.0
         
@@ -43,6 +46,8 @@ class KeyboardViewController: UIInputViewController {
 
     func makeLetterButtons() {
         let letterButtonRows = letterButtonKeyRows.map { makeButtonRow($0) }
+        self.letterButtons = Array(letterButtonRows.joined())
+
         for (index, buttonRow) in letterButtonRows.enumerated() {
             if index == 0 {
                 buttonRow[0].topAnchor.constraint(equalTo: self.view.topAnchor, constant: self.keyboard.topMargin).isActive = true
@@ -84,14 +89,26 @@ class KeyboardViewController: UIInputViewController {
         nextKeyboard.widthAnchor.constraint(equalToConstant: keyboard.buttonHeight).isActive = true
         nextKeyboard.bottomAnchor.constraint(equalTo: self.view.bottomAnchor, constant: -keyboard.bottomMargin).isActive = true
     }
-    
+
+    func makeShiftButton() {
+        let shiftKey = ShiftButton(self.shiftButtonLabel, proxyDelegate: self)
+        let bottomAnchorConstant = keyboard.buttonHeight + 2*keyboard.verticalSpaceBetweenButtons
+        self.view.addSubview(shiftKey)
+        shiftKey.heightAnchor.constraint(equalToConstant: self.keyboard.buttonHeight).isActive = true
+        // Backspace key is supposed to be square in portrait mode
+        shiftKey.widthAnchor.constraint(equalToConstant: keyboard.buttonHeight).isActive = true
+        shiftKey.leadingAnchor.constraint(equalTo: self.view.leadingAnchor, constant: keyboard.leftMargin).isActive = true
+        shiftKey.bottomAnchor.constraint(equalTo: self.view.bottomAnchor, constant: -bottomAnchorConstant).isActive = true
+    }
+
     func makeKeyboard() {
         self.keyboard = Keyboard(UIScreen.main.bounds.width)
-        
+
         self.makeLetterButtons()
         self.makeBackspaceButton()
         self.makeNextKeyboardButton()
         self.makeSpaceButton()
+        self.makeShiftButton()
     }
 
     override func viewDidLoad() {
@@ -112,5 +129,10 @@ extension KeyboardViewController : KeyboardViewControllerProxy {
     func advanceToNextKeyboard() {
         self.advanceToNextInputMode()
     }
-}
 
+    func toggleCase() {
+        for button in self.letterButtons {
+            button.switchMode()
+        }
+    }
+}
