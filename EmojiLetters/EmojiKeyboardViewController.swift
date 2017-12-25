@@ -12,10 +12,11 @@ import UIKit
 class EmojiKeyboardViewController: KeyboardViewController {
     override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
         super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
+        // This is a hack since I can't find enough lowercase versions of emoji letters
         self.letterButtonKeyRows = [
-            ["🍳", "〰️", "📧", "®️", "✝️", "🈂️", "⛎", "ℹ️", "🅾️", "🅿️"],
-            ["🅰️", "⚡️", "🆔", "🎏", "🌀", "♓️", "🗾", "🎋", "👢"],
-            ["💤", "❌", "☪️", "♈️", "🅱️", "♑️", "♏️"]
+            [("🍳","🍳"), ("〰️","〰️"), ("📧","📧"), ("®️","®️"), ("✝️","✝️"), ("🈂️","🈂️"), ("⛎","⛎"), ("ℹ️","ℹ️"), ("🅾️","🅾️"), ("🅿️","🅿️")],
+            [("🅰️","🅰️"), ("⚡️","⚡️"), ("🆔","🆔"), ("🎏","🎏"), ("🌀","🌀"), ("♓️","♓️"), ("🗾","🗾"), ("🎋","🎋"), ("👢","👢")],
+            [("💤","💤"), ("❌","❌"), ("☪️","☪️"), ("♈️","♈️"), ("🅱️","🅱️"), ("♑️","♑️"), ("♏️","♏️")]
         ]
         self.deleteButtonLabel = "🔙"
         self.spaceButtonLabel = "　"

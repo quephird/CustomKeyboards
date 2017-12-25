@@ -13,10 +13,11 @@ class DotMatrixKeyboardViewController : KeyboardViewController {
     override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
         super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
         self.letterButtonKeyRows = [
-            ["⢎⣱", "⣧⣼", "⣟⣋", "⡯⢕", "⠉⡏", "⠑⡎", "⣇⣸", "⢸", "⢎⡱", "⡯⠕"],
-            ["⡮⢵", "⣚⡣", "⣏⡱", "⡟⠋", "⢎⡭", "⡗⢺", "⢄⡸", "⡗⢎", "⣇⣀"],
-            ["⣩⣋", "⡱⢎", "⢎⣉", "⢇⡸", "⣟⡳", "⡗⢼", "⡟⢻"]
+            [("⠪⡇","⢎⣱"), ("⢶⣶","⣧⣼"), ("⢴⣦","⣟⣋"), ("⡖","⡯⢕"), ("⢗","⠉⡏"), ("⢘⡺","⠑⡎"), ("⢆⣰","⣇⣸"), ("⢨","⢸"), ("⢔⡢","⢎⡱"), ("⢸⠕","⡯⠕")],
+            [("⢔⣲","⡮⢵"), ("⣴⡶","⣚⡫"), ("⢔⣺","⣏⡱"), ("⡮","⡟⠋"), ("⢪⡽","⢎⡭"), ("⡗⢢","⡗⢺"), ("⠠⡨","⢄⡸"), ("⢸⢔","⡗⢎"), ("⢹","⣇⣀")],
+            [("⣲⡂","⣩⣋"), ("⡢⢔","⡱⢎"), ("⢔⡂","⢎⣉"), ("⢆⡰","⢣⡜"), ("⣗⡢","⣟⡳"), ("⡖⢢","⡗⢼"), ("⣶⣦","⡟⢻")]
         ]
+
         self.deleteButtonLabel = "⢾⠶"
         self.spaceButtonLabel = "　"
         self.shiftButtonLabel = "⢺⡗"

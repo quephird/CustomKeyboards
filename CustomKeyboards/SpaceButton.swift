@@ -12,7 +12,7 @@ import UIKit
 class SpaceButton : KeyboardButton {
     override func handleTap(_ recognizer: UITapGestureRecognizer) {
         self.playInputClick(soundId: self.modifierSoundId)
-        self.proxyDelegate.insertText(buttonText: labelText)
+        self.proxyDelegate.insertText(buttonText: self.buttonLabel.text!)
     }
 }
 
