@@ -29,15 +29,11 @@ class KeyboardViewController: UIInputViewController {
             button.heightAnchor.constraint(equalToConstant: self.keyboard.buttonHeight).isActive = true
             if index == 0 {
                 button.leadingAnchor.constraint(equalTo: self.view.leadingAnchor, constant: keyboard.leftMargin+additionalMargin).isActive = true
-            } else if index < newButtons.count-1 {
-                button.leadingAnchor.constraint(equalTo: newButtons[index-1].trailingAnchor, constant: self.keyboard.horizontalSpaceBetweenButtons).isActive = true
-                button.widthAnchor.constraint(equalTo: newButtons[index-1].widthAnchor).isActive = true
-                button.topAnchor.constraint(equalTo: newButtons[index-1].topAnchor).isActive = true
+                button.widthAnchor.constraint(equalToConstant: self.keyboard.buttonWidth).isActive = true
             } else {
                 button.leadingAnchor.constraint(equalTo: newButtons[index-1].trailingAnchor, constant: self.keyboard.horizontalSpaceBetweenButtons).isActive = true
                 button.widthAnchor.constraint(equalTo: newButtons[index-1].widthAnchor).isActive = true
                 button.topAnchor.constraint(equalTo: newButtons[index-1].topAnchor).isActive = true
-                button.trailingAnchor.constraint(equalTo: self.view.trailingAnchor, constant: -self.keyboard.rightMargin-additionalMargin).isActive = true
             }
         }
         
