@@ -8,7 +8,7 @@
 
 import UIKit
 
-/// Specialized class for the backspace button
+/// Specialized class for the next keyboard button
 class NextKeyboardButton : KeyboardButton {
     override func handleTap(_ recognizer: UITapGestureRecognizer) {
         self.playInputClick(soundId: self.modifierSoundId)
