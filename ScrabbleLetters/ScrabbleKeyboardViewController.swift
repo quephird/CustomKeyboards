@@ -19,6 +19,7 @@ class ScrabbleKeyboardViewController: KeyboardViewController {
             [("🅉₁₀","🅉₁₀"), ("🅇₈","🅇₈"), ("🄲₃","🄲₃"), ("🅅₄","🅅₄"), ("🄱₃","🄱₃"), ("🄽₁","🄽₁"), ("🄼₃","🄼₃")]
         ]
         self.deleteButtonLabel = "←⃞"
+        self.returnButtonLabel = "🅁₁🄴₁🅃₁🅄₁🅁₁🄽₁"
         self.spaceButtonLabel = "　"
         self.shiftButtonLabel = ""
     }

@@ -19,6 +19,7 @@ class DotMatrixKeyboardViewController : KeyboardViewController {
         ]
 
         self.deleteButtonLabel = "⢾⠶"
+        self.returnButtonLabel = "⡖⢴⣦⢗⢆⣰⡖⡖⢢"
         self.spaceButtonLabel = "　"
         self.shiftButtonLabel = "⢺⡗"
     }

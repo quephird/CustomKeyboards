@@ -19,8 +19,9 @@ class EmojiKeyboardViewController: KeyboardViewController {
             [("💤","💤"), ("❌","❌"), ("☪️","☪️"), ("♈️","♈️"), ("🅱️","🅱️"), ("♑️","♑️"), ("♏️","♏️")]
         ]
         self.deleteButtonLabel = "🔙"
-        self.spaceButtonLabel = "　"
+        self.returnButtonLabel = "↩️"
         self.shiftButtonLabel = ""
+        self.spaceButtonLabel = "　"
     }
     
     required init?(coder aDecoder: NSCoder) {
