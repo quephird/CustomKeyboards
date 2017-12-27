@@ -19,10 +19,11 @@ class UpsideDownKeyboardViewController : KeyboardViewController {
         ]
         self.deleteButtonLabel = "⌦"
         self.returnButtonLabel = "uɹnʇǝɹ"
-        self.spaceButtonLabel = " "
+        self.spaceButtonText = " "
+        self.spaceButtonLabel = "ǝɔɐds"
         self.shiftButtonLabel = "⇩"
     }
-    
+
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }

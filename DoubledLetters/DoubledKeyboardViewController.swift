@@ -19,7 +19,8 @@ class DoubledKeyboardViewController : KeyboardViewController {
         ]
         self.deleteButtonLabel = "⤆"
         self.returnButtonLabel = "𝕣𝕖𝕥𝕦𝕣𝕟"
-        self.spaceButtonLabel = " "
+        self.spaceButtonText = " "
+        self.spaceButtonLabel = "𝕤𝕡𝕒𝕔𝕖"
         self.shiftButtonLabel = "⇑"
     }
     
