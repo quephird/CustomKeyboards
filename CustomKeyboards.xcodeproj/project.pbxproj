@@ -64,6 +64,12 @@
 		8750E4AD1FE5C0A500241610 /* NextKeyboardButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8750E4AB1FE5BDB100241610 /* NextKeyboardButton.swift */; };
 		8750E4AE1FE5C0A600241610 /* NextKeyboardButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8750E4AB1FE5BDB100241610 /* NextKeyboardButton.swift */; };
 		8750E4AF1FE5C0A600241610 /* NextKeyboardButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8750E4AB1FE5BDB100241610 /* NextKeyboardButton.swift */; };
+		87AEFB7B1FF30D5800D3C8B6 /* ReturnButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87AEFB7A1FF30D5800D3C8B6 /* ReturnButton.swift */; };
+		87AEFB7C1FF313AB00D3C8B6 /* ReturnButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87AEFB7A1FF30D5800D3C8B6 /* ReturnButton.swift */; };
+		87AEFB7D1FF313AB00D3C8B6 /* ReturnButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87AEFB7A1FF30D5800D3C8B6 /* ReturnButton.swift */; };
+		87AEFB7E1FF313AC00D3C8B6 /* ReturnButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87AEFB7A1FF30D5800D3C8B6 /* ReturnButton.swift */; };
+		87AEFB7F1FF313AD00D3C8B6 /* ReturnButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87AEFB7A1FF30D5800D3C8B6 /* ReturnButton.swift */; };
+		87AEFB801FF313AD00D3C8B6 /* ReturnButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87AEFB7A1FF30D5800D3C8B6 /* ReturnButton.swift */; };
 		87BA96971FCCFA2400FD7E7A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87BA96961FCCFA2400FD7E7A /* AppDelegate.swift */; };
 		87BA96991FCCFA2400FD7E7A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87BA96981FCCFA2400FD7E7A /* ViewController.swift */; };
 		87BA969C1FCCFA2400FD7E7A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 87BA969A1FCCFA2400FD7E7A /* Main.storyboard */; };
@@ -174,6 +180,7 @@
 		8750E49F1FE215B200241610 /* BackspaceButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackspaceButton.swift; sourceTree = "<group>"; };
 		8750E4A41FE4A59F00241610 /* SpaceButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpaceButton.swift; sourceTree = "<group>"; };
 		8750E4AB1FE5BDB100241610 /* NextKeyboardButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NextKeyboardButton.swift; sourceTree = "<group>"; };
+		87AEFB7A1FF30D5800D3C8B6 /* ReturnButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReturnButton.swift; sourceTree = "<group>"; };
 		87BA96931FCCFA2400FD7E7A /* CustomKeyboards.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CustomKeyboards.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		87BA96961FCCFA2400FD7E7A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		87BA96981FCCFA2400FD7E7A /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -327,9 +334,10 @@
 				8750E4971FE0CE1A00241610 /* Tappable.swift */,
 				8750E49F1FE215B200241610 /* BackspaceButton.swift */,
 				8750E4951FE0C00000241610 /* LetterButton.swift */,
-				8750E4A41FE4A59F00241610 /* SpaceButton.swift */,
 				8750E4AB1FE5BDB100241610 /* NextKeyboardButton.swift */,
+				87AEFB7A1FF30D5800D3C8B6 /* ReturnButton.swift */,
 				8736FF291FEEF17100348F33 /* ShiftButton.swift */,
+				8750E4A41FE4A59F00241610 /* SpaceButton.swift */,
 				87BA969F1FCCFA2400FD7E7A /* LaunchScreen.storyboard */,
 				87BA969A1FCCFA2400FD7E7A /* Main.storyboard */,
 				87BA969D1FCCFA2400FD7E7A /* Assets.xcassets */,
@@ -659,6 +667,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				8736FF401FF18B5200348F33 /* KeyboardButton.swift in Sources */,
+				87AEFB7F1FF313AD00D3C8B6 /* ReturnButton.swift in Sources */,
 				8736FF431FF18B5B00348F33 /* LetterButton.swift in Sources */,
 				8736FF3D1FF18B4900348F33 /* Keyboard.swift in Sources */,
 				8736FF451FF18B6100348F33 /* NextKeyboardButton.swift in Sources */,
@@ -677,6 +686,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				8736FF591FF1BBD500348F33 /* KeyboardButton.swift in Sources */,
+				87AEFB801FF313AD00D3C8B6 /* ReturnButton.swift in Sources */,
 				8736FF5C1FF1BBD500348F33 /* LetterButton.swift in Sources */,
 				8736FF561FF1BBD500348F33 /* Keyboard.swift in Sources */,
 				8736FF5E1FF1BBD500348F33 /* NextKeyboardButton.swift in Sources */,
@@ -695,6 +705,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				8750E48F1FDCB69C00241610 /* KeyboardButton.swift in Sources */,
+				87AEFB7E1FF313AC00D3C8B6 /* ReturnButton.swift in Sources */,
 				8750E49E1FE214B300241610 /* LetterButton.swift in Sources */,
 				874A73DB1FDCB5D60074219C /* KeyboardViewControllerProxy.swift in Sources */,
 				8750E4AF1FE5C0A600241610 /* NextKeyboardButton.swift in Sources */,
@@ -716,6 +727,7 @@
 				8750E4961FE0C00000241610 /* LetterButton.swift in Sources */,
 				874A73C81FDC78680074219C /* KeyboardViewController.swift in Sources */,
 				8750E4981FE0CE1A00241610 /* Tappable.swift in Sources */,
+				87AEFB7B1FF30D5800D3C8B6 /* ReturnButton.swift in Sources */,
 				87BA96991FCCFA2400FD7E7A /* ViewController.swift in Sources */,
 				8750E4AC1FE5BDB100241610 /* NextKeyboardButton.swift in Sources */,
 				87F8412F1FD9106D00F35AF8 /* KeyboardViewControllerProxy.swift in Sources */,
@@ -748,6 +760,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				87FAAE3A1FCFD4ED0051F6BA /* KeyboardButton.swift in Sources */,
+				87AEFB7C1FF313AB00D3C8B6 /* ReturnButton.swift in Sources */,
 				8750E49C1FE214B200241610 /* LetterButton.swift in Sources */,
 				874A73C91FDC78FE0074219C /* KeyboardViewController.swift in Sources */,
 				8750E4AD1FE5C0A500241610 /* NextKeyboardButton.swift in Sources */,
@@ -766,6 +779,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				87FAAE4A1FCFD5430051F6BA /* KeyboardButton.swift in Sources */,
+				87AEFB7D1FF313AB00D3C8B6 /* ReturnButton.swift in Sources */,
 				8750E49D1FE214B300241610 /* LetterButton.swift in Sources */,
 				874A73CA1FDC7FFB0074219C /* KeyboardViewController.swift in Sources */,
 				8750E4AE1FE5C0A600241610 /* NextKeyboardButton.swift in Sources */,

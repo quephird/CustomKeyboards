@@ -18,6 +18,7 @@ class FrakturKeyboardViewController: KeyboardViewController {
             [("𝖟","𝖅"), ("𝖝","𝖃"), ("𝖈","𝕮"), ("𝖛","𝖁"), ("𝖇","𝕭"), ("𝖓","𝕹"), ("𝖒","𝕸")]
         ]
         self.deleteButtonLabel = "⬻"
+        self.returnButtonLabel = "𝖗𝖊𝖙𝖚𝖗𝖓"
         self.spaceButtonLabel = " "
         self.shiftButtonLabel = "⇞"
     }
