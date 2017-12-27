@@ -1,5 +1,5 @@
 //
-//  TapHandler.swift
+//  Tappable.swift
 //  CustomKeyboards
 //
 //  Created by danielle kefford on 12/12/17.

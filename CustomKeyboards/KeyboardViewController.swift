@@ -16,6 +16,7 @@ class KeyboardViewController: UIInputViewController {
     var deleteButtonLabel : String!
     var returnButtonLabel : String!
     var shiftButtonLabel : String!
+    var spaceButtonText : String!
     var spaceButtonLabel : String!
     var keyboard : Keyboard!
     var letterButtons : [LetterButton]!
@@ -88,7 +89,7 @@ class KeyboardViewController: UIInputViewController {
     }
 
     func makeSpaceButton() {
-        let spacebar = SpaceButton(self.spaceButtonLabel, proxyDelegate: self)
+        let spacebar = SpaceButton(self.spaceButtonLabel, spaceText: self.spaceButtonText, proxyDelegate: self)
         let spacebarLeftMargin = 3.5*keyboard.buttonWidth + 3*keyboard.horizontalSpaceBetweenButtons + keyboard.leftMargin
         let spacebarRightMargin = 3*keyboard.buttonWidth + keyboard.horizontalSpaceBetweenButtons + keyboard.leftMargin
         self.view.addSubview(spacebar)
