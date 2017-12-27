@@ -27,4 +27,3 @@ class DoubledKeyboardViewController : KeyboardViewController {
         fatalError("init(coder:) has not been implemented")
     }
 }
-
