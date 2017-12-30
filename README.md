@@ -22,17 +22,23 @@ git clone https://github.com/quephird/CustomKeyboards
 
 Next, select any of the keyboard targets:
 
-![](images/select_target.png)
+<p align="center">
+  <img src="./images/select_target.png" width="50%">
+</p>
 
 ... and select whatever iOS runtime you have installed and click the black triangle to run the project.
 
 To expose the keyboards, you'll have to do a couple of things. First, make sure to trust the app; in the Settings app, go to General -> Keyboard -> Keyboards -> Add New Keyboard...
 
-![](images/add_new_keyboard.png)
+<p align="center">
+  <img src="./images/add_new_keyboard.png" width="50%">
+</p>
 
 ... and select whatever keyboards you want to install.
 
-![](images/select_keyboards.png)
+<p align="center">
+  <img src="./images/select_keyboards.png" width="50%">
+</p>
 
 # Features
 
@@ -46,29 +52,41 @@ There are six keyboards at this time including:
 
 #### Dot matrix letters
 
-![](./images/dot_matrix.png)
+<p align="center">
+  <img src="./images/dot_matrix.png" width="50%">
+</p>
 
 #### Doubled letters
 
-![](./images/doubled.png)
+<p align="center">
+  <img src="./images/doubled.png" width="50%">
+</p>
 
 #### Emoji
 
-![](./images/emoji.png)
+<p align="center">
+  <img src="./images/emoji.png" width="50%">
+</p>
 
 #### Fraktur
 
-![](./images/fraktur.png)
+<p align="center">
+  <img src="./images/fraktur.png" width="50%">
+</p>
 
 #### Scrabble tiles
 
-![](./images/scrabble.png)
+<p align="center">
+  <img src="./images/scrabble.png" width="50%">
+</p>
 
 #### Upside down letters
 
-![](./images/dot_matrix.png)
+<p align="center">
+  <img src="./images/upside_down.png" width="50%">
+</p>
 
-Features that are not supported yet
+Features that are not supported yet:
 
 * Holding down the globe key for the input list switcher view
 * Holding down any of the keys to repeat their entry
