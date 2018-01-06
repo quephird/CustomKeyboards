@@ -64,6 +64,19 @@
 		8750E4AD1FE5C0A500241610 /* NextKeyboardButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8750E4AB1FE5BDB100241610 /* NextKeyboardButton.swift */; };
 		8750E4AE1FE5C0A600241610 /* NextKeyboardButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8750E4AB1FE5BDB100241610 /* NextKeyboardButton.swift */; };
 		8750E4AF1FE5C0A600241610 /* NextKeyboardButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8750E4AB1FE5BDB100241610 /* NextKeyboardButton.swift */; };
+		87A18E7F1FFDC2B0002170F6 /* MonospaceKeyboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87A18E7E1FFDC2B0002170F6 /* MonospaceKeyboardViewController.swift */; };
+		87A18E831FFDC2B0002170F6 /* MonospaceLetters.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 87A18E7C1FFDC2B0002170F6 /* MonospaceLetters.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		87A18E891FFDC2F3002170F6 /* Keyboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87FAAE4B1FD0F1850051F6BA /* Keyboard.swift */; };
+		87A18E8A1FFDC2F3002170F6 /* KeyboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 874A73C71FDC78680074219C /* KeyboardViewController.swift */; };
+		87A18E8B1FFDC2F3002170F6 /* KeyboardViewControllerProxy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87C248341FD63CFD00C87862 /* KeyboardViewControllerProxy.swift */; };
+		87A18E8C1FFDC2F3002170F6 /* KeyboardButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8748F7EC1FCD066700CBF5C5 /* KeyboardButton.swift */; };
+		87A18E8D1FFDC2F3002170F6 /* Tappable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8750E4971FE0CE1A00241610 /* Tappable.swift */; };
+		87A18E8E1FFDC2F3002170F6 /* BackspaceButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8750E49F1FE215B200241610 /* BackspaceButton.swift */; };
+		87A18E8F1FFDC2F3002170F6 /* LetterButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8750E4951FE0C00000241610 /* LetterButton.swift */; };
+		87A18E901FFDC2F3002170F6 /* NextKeyboardButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8750E4AB1FE5BDB100241610 /* NextKeyboardButton.swift */; };
+		87A18E911FFDC2F3002170F6 /* ReturnButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87AEFB7A1FF30D5800D3C8B6 /* ReturnButton.swift */; };
+		87A18E921FFDC2F3002170F6 /* ShiftButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8736FF291FEEF17100348F33 /* ShiftButton.swift */; };
+		87A18E931FFDC2F3002170F6 /* SpaceButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8750E4A41FE4A59F00241610 /* SpaceButton.swift */; };
 		87AEFB7B1FF30D5800D3C8B6 /* ReturnButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87AEFB7A1FF30D5800D3C8B6 /* ReturnButton.swift */; };
 		87AEFB7C1FF313AB00D3C8B6 /* ReturnButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87AEFB7A1FF30D5800D3C8B6 /* ReturnButton.swift */; };
 		87AEFB7D1FF313AB00D3C8B6 /* ReturnButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87AEFB7A1FF30D5800D3C8B6 /* ReturnButton.swift */; };
@@ -127,6 +140,13 @@
 			remoteGlobalIDString = 874A73CE1FDCB1300074219C;
 			remoteInfo = DoubledLetters;
 		};
+		87A18E811FFDC2B0002170F6 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 87BA968B1FCCFA2400FD7E7A /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 87A18E7B1FFDC2B0002170F6;
+			remoteInfo = MonospaceLetters;
+		};
 		87AEFB8A1FF34CCD00D3C8B6 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 87BA968B1FCCFA2400FD7E7A /* Project object */;
@@ -176,6 +196,7 @@
 				87FAAE461FCFD53C0051F6BA /* DotMatrixLetters.appex in Embed App Extensions */,
 				8736FF391FF18B3600348F33 /* FrakturLetters.appex in Embed App Extensions */,
 				8736FF521FF1BB6800348F33 /* ScrabbleLetters.appex in Embed App Extensions */,
+				87A18E831FFDC2B0002170F6 /* MonospaceLetters.appex in Embed App Extensions */,
 				874A73D61FDCB1300074219C /* DoubledLetters.appex in Embed App Extensions */,
 			);
 			name = "Embed App Extensions";
@@ -201,6 +222,9 @@
 		8750E49F1FE215B200241610 /* BackspaceButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackspaceButton.swift; sourceTree = "<group>"; };
 		8750E4A41FE4A59F00241610 /* SpaceButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpaceButton.swift; sourceTree = "<group>"; };
 		8750E4AB1FE5BDB100241610 /* NextKeyboardButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NextKeyboardButton.swift; sourceTree = "<group>"; };
+		87A18E7C1FFDC2B0002170F6 /* MonospaceLetters.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = MonospaceLetters.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		87A18E7E1FFDC2B0002170F6 /* MonospaceKeyboardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MonospaceKeyboardViewController.swift; sourceTree = "<group>"; };
+		87A18E801FFDC2B0002170F6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		87AEFB7A1FF30D5800D3C8B6 /* ReturnButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReturnButton.swift; sourceTree = "<group>"; };
 		87AEFB851FF34CCD00D3C8B6 /* UpsideDownLetters.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = UpsideDownLetters.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 		87AEFB871FF34CCD00D3C8B6 /* UpsideDownKeyboardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpsideDownKeyboardViewController.swift; sourceTree = "<group>"; };
@@ -244,6 +268,13 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		874A73CC1FDCB1300074219C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		87A18E791FFDC2B0002170F6 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -322,6 +353,15 @@
 			path = DoubledLetters;
 			sourceTree = "<group>";
 		};
+		87A18E7D1FFDC2B0002170F6 /* MonospaceLetters */ = {
+			isa = PBXGroup;
+			children = (
+				87A18E7E1FFDC2B0002170F6 /* MonospaceKeyboardViewController.swift */,
+				87A18E801FFDC2B0002170F6 /* Info.plist */,
+			);
+			path = MonospaceLetters;
+			sourceTree = "<group>";
+		};
 		87AEFB861FF34CCD00D3C8B6 /* UpsideDownLetters */ = {
 			isa = PBXGroup;
 			children = (
@@ -343,6 +383,7 @@
 				8736FF331FF18B3600348F33 /* FrakturLetters */,
 				8736FF4C1FF1BB6800348F33 /* ScrabbleLetters */,
 				87AEFB861FF34CCD00D3C8B6 /* UpsideDownLetters */,
+				87A18E7D1FFDC2B0002170F6 /* MonospaceLetters */,
 				87BA96941FCCFA2400FD7E7A /* Products */,
 			);
 			sourceTree = "<group>";
@@ -359,6 +400,7 @@
 				8736FF321FF18B3600348F33 /* FrakturLetters.appex */,
 				8736FF4B1FF1BB6800348F33 /* ScrabbleLetters.appex */,
 				87AEFB851FF34CCD00D3C8B6 /* UpsideDownLetters.appex */,
+				87A18E7C1FFDC2B0002170F6 /* MonospaceLetters.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -477,6 +519,23 @@
 			productReference = 874A73CF1FDCB1300074219C /* DoubledLetters.appex */;
 			productType = "com.apple.product-type.app-extension";
 		};
+		87A18E7B1FFDC2B0002170F6 /* MonospaceLetters */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 87A18E861FFDC2B0002170F6 /* Build configuration list for PBXNativeTarget "MonospaceLetters" */;
+			buildPhases = (
+				87A18E781FFDC2B0002170F6 /* Sources */,
+				87A18E791FFDC2B0002170F6 /* Frameworks */,
+				87A18E7A1FFDC2B0002170F6 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = MonospaceLetters;
+			productName = MonospaceLetters;
+			productReference = 87A18E7C1FFDC2B0002170F6 /* MonospaceLetters.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
 		87AEFB841FF34CCD00D3C8B6 /* UpsideDownLetters */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 87AEFB8F1FF34CCD00D3C8B6 /* Build configuration list for PBXNativeTarget "UpsideDownLetters" */;
@@ -512,6 +571,7 @@
 				8736FF381FF18B3600348F33 /* PBXTargetDependency */,
 				8736FF511FF1BB6800348F33 /* PBXTargetDependency */,
 				87AEFB8B1FF34CCD00D3C8B6 /* PBXTargetDependency */,
+				87A18E821FFDC2B0002170F6 /* PBXTargetDependency */,
 			);
 			name = CustomKeyboards;
 			productName = CustomKeyboards;
@@ -610,6 +670,10 @@
 						CreatedOnToolsVersion = 9.1;
 						ProvisioningStyle = Automatic;
 					};
+					87A18E7B1FFDC2B0002170F6 = {
+						CreatedOnToolsVersion = 9.2;
+						ProvisioningStyle = Automatic;
+					};
 					87AEFB841FF34CCD00D3C8B6 = {
 						CreatedOnToolsVersion = 9.2;
 						ProvisioningStyle = Automatic;
@@ -660,6 +724,7 @@
 				8736FF311FF18B3600348F33 /* FrakturLetters */,
 				8736FF4A1FF1BB6800348F33 /* ScrabbleLetters */,
 				87AEFB841FF34CCD00D3C8B6 /* UpsideDownLetters */,
+				87A18E7B1FFDC2B0002170F6 /* MonospaceLetters */,
 			);
 		};
 /* End PBXProject section */
@@ -680,6 +745,13 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		874A73CD1FDCB1300074219C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		87A18E7A1FFDC2B0002170F6 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -788,6 +860,25 @@
 				8750E48E1FDCB68E00241610 /* Keyboard.swift in Sources */,
 				874A73DA1FDCB16C0074219C /* KeyboardViewController.swift in Sources */,
 				8750E4A81FE4A5E700241610 /* SpaceButton.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		87A18E781FFDC2B0002170F6 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				87A18E931FFDC2F3002170F6 /* SpaceButton.swift in Sources */,
+				87A18E911FFDC2F3002170F6 /* ReturnButton.swift in Sources */,
+				87A18E8C1FFDC2F3002170F6 /* KeyboardButton.swift in Sources */,
+				87A18E8D1FFDC2F3002170F6 /* Tappable.swift in Sources */,
+				87A18E8A1FFDC2F3002170F6 /* KeyboardViewController.swift in Sources */,
+				87A18E901FFDC2F3002170F6 /* NextKeyboardButton.swift in Sources */,
+				87A18E891FFDC2F3002170F6 /* Keyboard.swift in Sources */,
+				87A18E8E1FFDC2F3002170F6 /* BackspaceButton.swift in Sources */,
+				87A18E8F1FFDC2F3002170F6 /* LetterButton.swift in Sources */,
+				87A18E921FFDC2F3002170F6 /* ShiftButton.swift in Sources */,
+				87A18E8B1FFDC2F3002170F6 /* KeyboardViewControllerProxy.swift in Sources */,
+				87A18E7F1FFDC2B0002170F6 /* MonospaceKeyboardViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -901,6 +992,11 @@
 			isa = PBXTargetDependency;
 			target = 874A73CE1FDCB1300074219C /* DoubledLetters */;
 			targetProxy = 874A73D41FDCB1300074219C /* PBXContainerItemProxy */;
+		};
+		87A18E821FFDC2B0002170F6 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 87A18E7B1FFDC2B0002170F6 /* MonospaceLetters */;
+			targetProxy = 87A18E811FFDC2B0002170F6 /* PBXContainerItemProxy */;
 		};
 		87AEFB8B1FF34CCD00D3C8B6 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
@@ -1032,6 +1128,36 @@
 				INFOPLIST_FILE = DoubledLetters/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.quephird.CustomKeyboards.DoubledLetters;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		87A18E841FFDC2B0002170F6 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = GARV9392W2;
+				INFOPLIST_FILE = MonospaceLetters/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.quephird.CustomKeyboards.MonospaceLetters;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		87A18E851FFDC2B0002170F6 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = GARV9392W2;
+				INFOPLIST_FILE = MonospaceLetters/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.quephird.CustomKeyboards.MonospaceLetters;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 4.0;
@@ -1362,6 +1488,15 @@
 			buildConfigurations = (
 				874A73D71FDCB1300074219C /* Debug */,
 				874A73D81FDCB1300074219C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		87A18E861FFDC2B0002170F6 /* Build configuration list for PBXNativeTarget "MonospaceLetters" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				87A18E841FFDC2B0002170F6 /* Debug */,
+				87A18E851FFDC2B0002170F6 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
