@@ -35,6 +35,19 @@
 		8736FF5D1FF1BBD500348F33 /* SpaceButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8750E4A41FE4A59F00241610 /* SpaceButton.swift */; };
 		8736FF5E1FF1BBD500348F33 /* NextKeyboardButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8750E4AB1FE5BDB100241610 /* NextKeyboardButton.swift */; };
 		8736FF5F1FF1BBD500348F33 /* ShiftButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8736FF291FEEF17100348F33 /* ShiftButton.swift */; };
+		8746BF9620014A3C00066B6B /* TinyKeyboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8746BF9520014A3C00066B6B /* TinyKeyboardViewController.swift */; };
+		8746BF9A20014A3C00066B6B /* TinyLetters.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 8746BF9320014A3B00066B6B /* TinyLetters.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		8746BF9E20014B3300066B6B /* Keyboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87FAAE4B1FD0F1850051F6BA /* Keyboard.swift */; };
+		8746BF9F20014B3300066B6B /* KeyboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 874A73C71FDC78680074219C /* KeyboardViewController.swift */; };
+		8746BFA020014B3300066B6B /* KeyboardViewControllerProxy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87C248341FD63CFD00C87862 /* KeyboardViewControllerProxy.swift */; };
+		8746BFA120014B3300066B6B /* KeyboardButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8748F7EC1FCD066700CBF5C5 /* KeyboardButton.swift */; };
+		8746BFA220014B3300066B6B /* Tappable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8750E4971FE0CE1A00241610 /* Tappable.swift */; };
+		8746BFA320014B3300066B6B /* BackspaceButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8750E49F1FE215B200241610 /* BackspaceButton.swift */; };
+		8746BFA420014B3300066B6B /* LetterButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8750E4951FE0C00000241610 /* LetterButton.swift */; };
+		8746BFA520014B3300066B6B /* NextKeyboardButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8750E4AB1FE5BDB100241610 /* NextKeyboardButton.swift */; };
+		8746BFA620014B3300066B6B /* ReturnButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87AEFB7A1FF30D5800D3C8B6 /* ReturnButton.swift */; };
+		8746BFA720014B3300066B6B /* ShiftButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8736FF291FEEF17100348F33 /* ShiftButton.swift */; };
+		8746BFA820014B3300066B6B /* SpaceButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8750E4A41FE4A59F00241610 /* SpaceButton.swift */; };
 		874A73C81FDC78680074219C /* KeyboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 874A73C71FDC78680074219C /* KeyboardViewController.swift */; };
 		874A73C91FDC78FE0074219C /* KeyboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 874A73C71FDC78680074219C /* KeyboardViewController.swift */; };
 		874A73CA1FDC7FFB0074219C /* KeyboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 874A73C71FDC78680074219C /* KeyboardViewController.swift */; };
@@ -133,6 +146,13 @@
 			remoteGlobalIDString = 8736FF4A1FF1BB6800348F33;
 			remoteInfo = ScrabbleLetters;
 		};
+		8746BF9820014A3C00066B6B /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 87BA968B1FCCFA2400FD7E7A /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 8746BF9220014A3B00066B6B;
+			remoteInfo = TinyLetters;
+		};
 		874A73D41FDCB1300074219C /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 87BA968B1FCCFA2400FD7E7A /* Project object */;
@@ -195,6 +215,7 @@
 				87BA96CF1FCCFA3B00FD7E7A /* EmojiLetters.appex in Embed App Extensions */,
 				87FAAE461FCFD53C0051F6BA /* DotMatrixLetters.appex in Embed App Extensions */,
 				8736FF391FF18B3600348F33 /* FrakturLetters.appex in Embed App Extensions */,
+				8746BF9A20014A3C00066B6B /* TinyLetters.appex in Embed App Extensions */,
 				8736FF521FF1BB6800348F33 /* ScrabbleLetters.appex in Embed App Extensions */,
 				87A18E831FFDC2B0002170F6 /* MonospaceLetters.appex in Embed App Extensions */,
 				874A73D61FDCB1300074219C /* DoubledLetters.appex in Embed App Extensions */,
@@ -212,6 +233,9 @@
 		8736FF4B1FF1BB6800348F33 /* ScrabbleLetters.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = ScrabbleLetters.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 		8736FF4D1FF1BB6800348F33 /* ScrabbleKeyboardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScrabbleKeyboardViewController.swift; sourceTree = "<group>"; };
 		8736FF4F1FF1BB6800348F33 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8746BF9320014A3B00066B6B /* TinyLetters.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = TinyLetters.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		8746BF9520014A3C00066B6B /* TinyKeyboardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TinyKeyboardViewController.swift; sourceTree = "<group>"; };
+		8746BF9720014A3C00066B6B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8748F7EC1FCD066700CBF5C5 /* KeyboardButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardButton.swift; sourceTree = "<group>"; };
 		874A73C71FDC78680074219C /* KeyboardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardViewController.swift; sourceTree = "<group>"; };
 		874A73CF1FDCB1300074219C /* DoubledLetters.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = DoubledLetters.appex; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -261,6 +285,13 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		8736FF481FF1BB6800348F33 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8746BF9020014A3B00066B6B /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -344,6 +375,15 @@
 			path = ScrabbleLetters;
 			sourceTree = "<group>";
 		};
+		8746BF9420014A3C00066B6B /* TinyLetters */ = {
+			isa = PBXGroup;
+			children = (
+				8746BF9520014A3C00066B6B /* TinyKeyboardViewController.swift */,
+				8746BF9720014A3C00066B6B /* Info.plist */,
+			);
+			path = TinyLetters;
+			sourceTree = "<group>";
+		};
 		874A73D01FDCB1300074219C /* DoubledLetters */ = {
 			isa = PBXGroup;
 			children = (
@@ -384,6 +424,7 @@
 				8736FF4C1FF1BB6800348F33 /* ScrabbleLetters */,
 				87AEFB861FF34CCD00D3C8B6 /* UpsideDownLetters */,
 				87A18E7D1FFDC2B0002170F6 /* MonospaceLetters */,
+				8746BF9420014A3C00066B6B /* TinyLetters */,
 				87BA96941FCCFA2400FD7E7A /* Products */,
 			);
 			sourceTree = "<group>";
@@ -401,6 +442,7 @@
 				8736FF4B1FF1BB6800348F33 /* ScrabbleLetters.appex */,
 				87AEFB851FF34CCD00D3C8B6 /* UpsideDownLetters.appex */,
 				87A18E7C1FFDC2B0002170F6 /* MonospaceLetters.appex */,
+				8746BF9320014A3B00066B6B /* TinyLetters.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -502,6 +544,23 @@
 			productReference = 8736FF4B1FF1BB6800348F33 /* ScrabbleLetters.appex */;
 			productType = "com.apple.product-type.app-extension";
 		};
+		8746BF9220014A3B00066B6B /* TinyLetters */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 8746BF9D20014A3C00066B6B /* Build configuration list for PBXNativeTarget "TinyLetters" */;
+			buildPhases = (
+				8746BF8F20014A3B00066B6B /* Sources */,
+				8746BF9020014A3B00066B6B /* Frameworks */,
+				8746BF9120014A3B00066B6B /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = TinyLetters;
+			productName = TinyLetters;
+			productReference = 8746BF9320014A3B00066B6B /* TinyLetters.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
 		874A73CE1FDCB1300074219C /* DoubledLetters */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 874A73D91FDCB1300074219C /* Build configuration list for PBXNativeTarget "DoubledLetters" */;
@@ -572,6 +631,7 @@
 				8736FF511FF1BB6800348F33 /* PBXTargetDependency */,
 				87AEFB8B1FF34CCD00D3C8B6 /* PBXTargetDependency */,
 				87A18E821FFDC2B0002170F6 /* PBXTargetDependency */,
+				8746BF9920014A3C00066B6B /* PBXTargetDependency */,
 			);
 			name = CustomKeyboards;
 			productName = CustomKeyboards;
@@ -666,6 +726,10 @@
 						CreatedOnToolsVersion = 9.2;
 						ProvisioningStyle = Automatic;
 					};
+					8746BF9220014A3B00066B6B = {
+						CreatedOnToolsVersion = 9.2;
+						ProvisioningStyle = Automatic;
+					};
 					874A73CE1FDCB1300074219C = {
 						CreatedOnToolsVersion = 9.1;
 						ProvisioningStyle = Automatic;
@@ -725,6 +789,7 @@
 				8736FF4A1FF1BB6800348F33 /* ScrabbleLetters */,
 				87AEFB841FF34CCD00D3C8B6 /* UpsideDownLetters */,
 				87A18E7B1FFDC2B0002170F6 /* MonospaceLetters */,
+				8746BF9220014A3B00066B6B /* TinyLetters */,
 			);
 		};
 /* End PBXProject section */
@@ -738,6 +803,13 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		8736FF491FF1BB6800348F33 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8746BF9120014A3B00066B6B /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -841,6 +913,25 @@
 				8736FF5B1FF1BBD500348F33 /* BackspaceButton.swift in Sources */,
 				8736FF4E1FF1BB6800348F33 /* ScrabbleKeyboardViewController.swift in Sources */,
 				8736FF5D1FF1BBD500348F33 /* SpaceButton.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8746BF8F20014A3B00066B6B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8746BFA120014B3300066B6B /* KeyboardButton.swift in Sources */,
+				8746BFA420014B3300066B6B /* LetterButton.swift in Sources */,
+				8746BF9E20014B3300066B6B /* Keyboard.swift in Sources */,
+				8746BFA620014B3300066B6B /* ReturnButton.swift in Sources */,
+				8746BFA720014B3300066B6B /* ShiftButton.swift in Sources */,
+				8746BFA220014B3300066B6B /* Tappable.swift in Sources */,
+				8746BF9F20014B3300066B6B /* KeyboardViewController.swift in Sources */,
+				8746BFA020014B3300066B6B /* KeyboardViewControllerProxy.swift in Sources */,
+				8746BFA820014B3300066B6B /* SpaceButton.swift in Sources */,
+				8746BFA320014B3300066B6B /* BackspaceButton.swift in Sources */,
+				8746BF9620014A3C00066B6B /* TinyKeyboardViewController.swift in Sources */,
+				8746BFA520014B3300066B6B /* NextKeyboardButton.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -988,6 +1079,11 @@
 			target = 8736FF4A1FF1BB6800348F33 /* ScrabbleLetters */;
 			targetProxy = 8736FF501FF1BB6800348F33 /* PBXContainerItemProxy */;
 		};
+		8746BF9920014A3C00066B6B /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 8746BF9220014A3B00066B6B /* TinyLetters */;
+			targetProxy = 8746BF9820014A3C00066B6B /* PBXContainerItemProxy */;
+		};
 		874A73D51FDCB1300074219C /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 874A73CE1FDCB1300074219C /* DoubledLetters */;
@@ -1098,6 +1194,36 @@
 				INFOPLIST_FILE = ScrabbleLetters/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.quephird.CustomKeyboards.ScrabbleLetters;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		8746BF9B20014A3C00066B6B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = GARV9392W2;
+				INFOPLIST_FILE = TinyLetters/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.quephird.CustomKeyboards.TinyLetters;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		8746BF9C20014A3C00066B6B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = GARV9392W2;
+				INFOPLIST_FILE = TinyLetters/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.quephird.CustomKeyboards.TinyLetters;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 4.0;
@@ -1479,6 +1605,15 @@
 			buildConfigurations = (
 				8736FF531FF1BB6800348F33 /* Debug */,
 				8736FF541FF1BB6800348F33 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		8746BF9D20014A3C00066B6B /* Build configuration list for PBXNativeTarget "TinyLetters" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8746BF9B20014A3C00066B6B /* Debug */,
+				8746BF9C20014A3C00066B6B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
