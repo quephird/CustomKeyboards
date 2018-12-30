@@ -121,6 +121,19 @@
 		87C248321FD1070700C87862 /* Keyboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87FAAE4B1FD0F1850051F6BA /* Keyboard.swift */; };
 		87C248331FD1070800C87862 /* Keyboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87FAAE4B1FD0F1850051F6BA /* Keyboard.swift */; };
 		87C248361FD6400F00C87862 /* KeyboardViewControllerProxy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87C248341FD63CFD00C87862 /* KeyboardViewControllerProxy.swift */; };
+		87C7725221D88BF800AB4960 /* SidewaysKeyboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87C7725121D88BF800AB4960 /* SidewaysKeyboardViewController.swift */; };
+		87C7725621D88BF800AB4960 /* SidewaysLetters.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 87C7724F21D88BF800AB4960 /* SidewaysLetters.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		87C7725A21D88C5800AB4960 /* Keyboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87FAAE4B1FD0F1850051F6BA /* Keyboard.swift */; };
+		87C7725B21D88C5800AB4960 /* KeyboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 874A73C71FDC78680074219C /* KeyboardViewController.swift */; };
+		87C7725C21D88C5800AB4960 /* KeyboardViewControllerProxy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87C248341FD63CFD00C87862 /* KeyboardViewControllerProxy.swift */; };
+		87C7725D21D88C5800AB4960 /* KeyboardButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8748F7EC1FCD066700CBF5C5 /* KeyboardButton.swift */; };
+		87C7725E21D88C5800AB4960 /* Tappable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8750E4971FE0CE1A00241610 /* Tappable.swift */; };
+		87C7725F21D88C5800AB4960 /* BackspaceButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8750E49F1FE215B200241610 /* BackspaceButton.swift */; };
+		87C7726021D88C5800AB4960 /* LetterButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8750E4951FE0C00000241610 /* LetterButton.swift */; };
+		87C7726121D88C5800AB4960 /* NextKeyboardButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8750E4AB1FE5BDB100241610 /* NextKeyboardButton.swift */; };
+		87C7726221D88C5800AB4960 /* ReturnButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87AEFB7A1FF30D5800D3C8B6 /* ReturnButton.swift */; };
+		87C7726321D88C5800AB4960 /* ShiftButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8736FF291FEEF17100348F33 /* ShiftButton.swift */; };
+		87C7726421D88C5800AB4960 /* SpaceButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8750E4A41FE4A59F00241610 /* SpaceButton.swift */; };
 		87F8412F1FD9106D00F35AF8 /* KeyboardViewControllerProxy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87C248341FD63CFD00C87862 /* KeyboardViewControllerProxy.swift */; };
 		87F841311FD910BC00F35AF8 /* KeyboardViewControllerProxy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87C248341FD63CFD00C87862 /* KeyboardViewControllerProxy.swift */; };
 		87F84B7A20620CBD00EC083B /* ChineseKeyboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87F84B7920620CBD00EC083B /* ChineseKeyboardViewController.swift */; };
@@ -208,6 +221,13 @@
 			remoteGlobalIDString = 87BA96C71FCCFA3A00FD7E7A;
 			remoteInfo = "Emoji Letters";
 		};
+		87C7725421D88BF800AB4960 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 87BA968B1FCCFA2400FD7E7A /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 87C7724E21D88BF800AB4960;
+			remoteInfo = SidewaysLetters;
+		};
 		87F84B7C20620CBD00EC083B /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 87BA968B1FCCFA2400FD7E7A /* Project object */;
@@ -240,6 +260,7 @@
 				87F84B7E20620CBD00EC083B /* ChineseLetters.appex in Embed App Extensions */,
 				87A18E831FFDC2B0002170F6 /* MonospaceLetters.appex in Embed App Extensions */,
 				874A73D61FDCB1300074219C /* DoubledLetters.appex in Embed App Extensions */,
+				87C7725621D88BF800AB4960 /* SidewaysLetters.appex in Embed App Extensions */,
 			);
 			name = "Embed App Extensions";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -291,6 +312,9 @@
 		87BA96CA1FCCFA3B00FD7E7A /* EmojiKeyboardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmojiKeyboardViewController.swift; sourceTree = "<group>"; };
 		87BA96CC1FCCFA3B00FD7E7A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		87C248341FD63CFD00C87862 /* KeyboardViewControllerProxy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardViewControllerProxy.swift; sourceTree = "<group>"; };
+		87C7724F21D88BF800AB4960 /* SidewaysLetters.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = SidewaysLetters.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		87C7725121D88BF800AB4960 /* SidewaysKeyboardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SidewaysKeyboardViewController.swift; sourceTree = "<group>"; };
+		87C7725321D88BF800AB4960 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		87F84B7720620CBD00EC083B /* ChineseLetters.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = ChineseLetters.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 		87F84B7920620CBD00EC083B /* ChineseKeyboardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChineseKeyboardViewController.swift; sourceTree = "<group>"; };
 		87F84B7B20620CBD00EC083B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -365,6 +389,13 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		87BA96C51FCCFA3A00FD7E7A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		87C7724C21D88BF800AB4960 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -457,6 +488,7 @@
 				87A18E7D1FFDC2B0002170F6 /* MonospaceLetters */,
 				8746BF9420014A3C00066B6B /* TinyLetters */,
 				87F84B7820620CBD00EC083B /* ChineseLetters */,
+				87C7725021D88BF800AB4960 /* SidewaysLetters */,
 				87BA96941FCCFA2400FD7E7A /* Products */,
 			);
 			sourceTree = "<group>";
@@ -476,6 +508,7 @@
 				87A18E7C1FFDC2B0002170F6 /* MonospaceLetters.appex */,
 				8746BF9320014A3B00066B6B /* TinyLetters.appex */,
 				87F84B7720620CBD00EC083B /* ChineseLetters.appex */,
+				87C7724F21D88BF800AB4960 /* SidewaysLetters.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -529,6 +562,15 @@
 				87BA96CC1FCCFA3B00FD7E7A /* Info.plist */,
 			);
 			path = EmojiLetters;
+			sourceTree = "<group>";
+		};
+		87C7725021D88BF800AB4960 /* SidewaysLetters */ = {
+			isa = PBXGroup;
+			children = (
+				87C7725121D88BF800AB4960 /* SidewaysKeyboardViewController.swift */,
+				87C7725321D88BF800AB4960 /* Info.plist */,
+			);
+			path = SidewaysLetters;
 			sourceTree = "<group>";
 		};
 		87F84B7820620CBD00EC083B /* ChineseLetters */ = {
@@ -675,6 +717,7 @@
 				87A18E821FFDC2B0002170F6 /* PBXTargetDependency */,
 				8746BF9920014A3C00066B6B /* PBXTargetDependency */,
 				87F84B7D20620CBD00EC083B /* PBXTargetDependency */,
+				87C7725521D88BF800AB4960 /* PBXTargetDependency */,
 			);
 			name = CustomKeyboards;
 			productName = CustomKeyboards;
@@ -734,6 +777,23 @@
 			productReference = 87BA96C81FCCFA3A00FD7E7A /* EmojiLetters.appex */;
 			productType = "com.apple.product-type.app-extension";
 		};
+		87C7724E21D88BF800AB4960 /* SidewaysLetters */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 87C7725921D88BF800AB4960 /* Build configuration list for PBXNativeTarget "SidewaysLetters" */;
+			buildPhases = (
+				87C7724B21D88BF800AB4960 /* Sources */,
+				87C7724C21D88BF800AB4960 /* Frameworks */,
+				87C7724D21D88BF800AB4960 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = SidewaysLetters;
+			productName = SidewaysLetters;
+			productReference = 87C7724F21D88BF800AB4960 /* SidewaysLetters.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
 		87F84B7620620CBD00EC083B /* ChineseLetters */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 87F84B8120620CBD00EC083B /* Build configuration list for PBXNativeTarget "ChineseLetters" */;
@@ -774,7 +834,7 @@
 		87BA968B1FCCFA2400FD7E7A /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 0920;
+				LastSwiftUpdateCheck = 1010;
 				LastUpgradeCheck = 0910;
 				ORGANIZATIONNAME = "danielle kefford";
 				TargetAttributes = {
@@ -820,6 +880,10 @@
 						CreatedOnToolsVersion = 9.1;
 						ProvisioningStyle = Automatic;
 					};
+					87C7724E21D88BF800AB4960 = {
+						CreatedOnToolsVersion = 10.1;
+						ProvisioningStyle = Automatic;
+					};
 					87F84B7620620CBD00EC083B = {
 						CreatedOnToolsVersion = 9.2;
 						ProvisioningStyle = Automatic;
@@ -855,6 +919,7 @@
 				87A18E7B1FFDC2B0002170F6 /* MonospaceLetters */,
 				8746BF9220014A3B00066B6B /* TinyLetters */,
 				87F84B7620620CBD00EC083B /* ChineseLetters */,
+				87C7724E21D88BF800AB4960 /* SidewaysLetters */,
 			);
 		};
 /* End PBXProject section */
@@ -927,6 +992,13 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		87BA96C61FCCFA3A00FD7E7A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		87C7724D21D88BF800AB4960 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -1119,6 +1191,25 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		87C7724B21D88BF800AB4960 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				87C7725D21D88C5800AB4960 /* KeyboardButton.swift in Sources */,
+				87C7726021D88C5800AB4960 /* LetterButton.swift in Sources */,
+				87C7725A21D88C5800AB4960 /* Keyboard.swift in Sources */,
+				87C7726221D88C5800AB4960 /* ReturnButton.swift in Sources */,
+				87C7726321D88C5800AB4960 /* ShiftButton.swift in Sources */,
+				87C7725E21D88C5800AB4960 /* Tappable.swift in Sources */,
+				87C7725B21D88C5800AB4960 /* KeyboardViewController.swift in Sources */,
+				87C7725C21D88C5800AB4960 /* KeyboardViewControllerProxy.swift in Sources */,
+				87C7726421D88C5800AB4960 /* SpaceButton.swift in Sources */,
+				87C7725F21D88C5800AB4960 /* BackspaceButton.swift in Sources */,
+				87C7725221D88BF800AB4960 /* SidewaysKeyboardViewController.swift in Sources */,
+				87C7726121D88C5800AB4960 /* NextKeyboardButton.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		87F84B7320620CBD00EC083B /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -1204,6 +1295,11 @@
 			isa = PBXTargetDependency;
 			target = 87BA96C71FCCFA3A00FD7E7A /* EmojiLetters */;
 			targetProxy = 87BA96CD1FCCFA3B00FD7E7A /* PBXContainerItemProxy */;
+		};
+		87C7725521D88BF800AB4960 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 87C7724E21D88BF800AB4960 /* SidewaysLetters */;
+			targetProxy = 87C7725421D88BF800AB4960 /* PBXContainerItemProxy */;
 		};
 		87F84B7D20620CBD00EC083B /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
@@ -1686,6 +1782,47 @@
 			};
 			name = Release;
 		};
+		87C7725721D88BF800AB4960 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = GARV9392W2;
+				INFOPLIST_FILE = SidewaysLetters/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = com.quephird.CustomKeyboards.SidewaysLetters;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		87C7725821D88BF800AB4960 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = GARV9392W2;
+				INFOPLIST_FILE = SidewaysLetters/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				MTL_FAST_MATH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = com.quephird.CustomKeyboards.SidewaysLetters;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
 		87F84B7F20620CBD00EC083B /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -1848,6 +1985,15 @@
 			buildConfigurations = (
 				87BA96D11FCCFA3B00FD7E7A /* Debug */,
 				87BA96D21FCCFA3B00FD7E7A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		87C7725921D88BF800AB4960 /* Build configuration list for PBXNativeTarget "SidewaysLetters" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				87C7725721D88BF800AB4960 /* Debug */,
+				87C7725821D88BF800AB4960 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
