@@ -33,6 +33,9 @@ class KeyboardButton : UIView {
 
         self.buttonLabel.translatesAutoresizingMaskIntoConstraints = false
         self.buttonLabel.text = labelText
+        self.buttonLabel.font = self.buttonLabel.font.withSize(14)
+        self.layer.borderWidth = 1.0
+        self.layer.borderColor = UIColor(red: 0.9, green: 0.9, blue: 0.9, alpha: 1.0).cgColor
         self.addSubview(self.buttonLabel)
         self.buttonLabel.centerXAnchor.constraint(equalTo: self.centerXAnchor).isActive = true
         self.buttonLabel.centerYAnchor.constraint(equalTo: self.centerYAnchor).isActive = true
