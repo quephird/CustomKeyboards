@@ -28,9 +28,18 @@ class LetterButton : KeyboardButton {
         fatalError("init(coder:) has not been implemented")
     }
 
-    override func handleTap(_ recognizer: UITapGestureRecognizer) {
-        self.playInputClick(soundId: self.clickSoundId)
-        self.proxyDelegate.insertText(buttonText: self.buttonLabel.text!)
+    override func handleTap(_ recognizer: UIGestureRecognizer) {
+        if recognizer.state == .began {
+            self.frame.origin.y = self.frame.origin.y - self.frame.size.height
+            self.frame.size.height = self.frame.size.height * 2
+            self.frame.origin.x = self.frame.origin.x
+
+            self.playInputClick(soundId: self.clickSoundId)
+            self.proxyDelegate.insertText(buttonText: self.buttonLabel.text!)
+        } else if recognizer.state == .ended {
+            self.frame.origin.y = self.frame.origin.y + self.frame.size.height / 2
+            self.frame.size.height = self.frame.size.height / 2
+        }
     }
 
     func switchMode() {

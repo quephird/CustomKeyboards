@@ -23,22 +23,6 @@ class KeyboardViewController: UIInputViewController {
 
     func makeButtonRow(_ buttonKeys: [(String, String)]) -> [LetterButton] {
         let newButtons = buttonKeys.map { LetterButton($0, proxyDelegate: self) }
-        let additionalMargin = (self.keyboard.keyboardWidth - self.keyboard.leftMargin - self.keyboard.rightMargin)*(10.0-CGFloat(newButtons.count))/20.0
-        
-        for (index, button) in newButtons.enumerated() {
-            self.view.addSubview(button)
-            
-            button.heightAnchor.constraint(equalToConstant: self.keyboard.buttonHeight).isActive = true
-            if index == 0 {
-                button.leadingAnchor.constraint(equalTo: self.view.leadingAnchor, constant: keyboard.leftMargin+additionalMargin).isActive = true
-                button.widthAnchor.constraint(equalToConstant: self.keyboard.buttonWidth).isActive = true
-            } else {
-                button.leadingAnchor.constraint(equalTo: newButtons[index-1].trailingAnchor, constant: self.keyboard.horizontalSpaceBetweenButtons).isActive = true
-                button.widthAnchor.constraint(equalTo: newButtons[index-1].widthAnchor).isActive = true
-                button.topAnchor.constraint(equalTo: newButtons[index-1].topAnchor).isActive = true
-            }
-        }
-        
         return newButtons
     }
 
@@ -46,11 +30,20 @@ class KeyboardViewController: UIInputViewController {
         let letterButtonRows = letterButtonKeyRows.map { makeButtonRow($0) }
         self.letterButtons = Array(letterButtonRows.joined())
 
-        for (index, buttonRow) in letterButtonRows.enumerated() {
-            if index == 0 {
-                buttonRow[0].topAnchor.constraint(equalTo: self.view.topAnchor, constant: self.keyboard.topMargin).isActive = true
-            } else {
-                buttonRow[0].topAnchor.constraint(equalTo: letterButtonRows[index-1][0].bottomAnchor, constant: self.keyboard.verticalSpaceBetweenButtons).isActive = true
+        for (rowIndex, buttonRow) in letterButtonRows.enumerated() {
+            for (buttonIndex, button) in buttonRow.enumerated() {
+                // Note that we need to indent each key based on the _total_ number
+                // of keys in the row, not just its index, hence the extra accounting.
+                let x = self.keyboard.leftMargin +
+                    CGFloat(buttonIndex)*self.keyboard.horizontalSpaceBetweenButtons +
+                    CGFloat(buttonIndex)*self.keyboard.buttonWidth +
+                    CGFloat(10 - buttonRow.count)*0.5*self.keyboard.horizontalSpaceBetweenButtons +
+                    CGFloat(10 - buttonRow.count)*0.5*self.keyboard.buttonWidth
+                let y = self.keyboard.topMargin +
+                    CGFloat(rowIndex)*self.keyboard.verticalSpaceBetweenButtons +
+                    CGFloat(rowIndex)*self.keyboard.buttonHeight
+                button.frame = CGRect(x: x, y: y, width: self.keyboard.buttonWidth, height: self.keyboard.buttonHeight)
+                self.view.addSubview(button)
             }
         }
     }
@@ -60,7 +53,6 @@ class KeyboardViewController: UIInputViewController {
         let bottomAnchorConstant = keyboard.buttonHeight + 2*keyboard.verticalSpaceBetweenButtons
         self.view.addSubview(shiftKey)
         shiftKey.heightAnchor.constraint(equalToConstant: self.keyboard.buttonHeight).isActive = true
-        // Backspace key is supposed to be square in portrait mode
         shiftKey.widthAnchor.constraint(equalToConstant: keyboard.buttonHeight).isActive = true
         shiftKey.leadingAnchor.constraint(equalTo: self.view.leadingAnchor, constant: keyboard.leftMargin).isActive = true
         shiftKey.bottomAnchor.constraint(equalTo: self.view.bottomAnchor, constant: -bottomAnchorConstant).isActive = true
@@ -121,7 +113,17 @@ class KeyboardViewController: UIInputViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+
+        // Do any additional setup after loading the view, typically from a nib.
         self.makeKeyboard()
+        // This disables all autolayout because we want to layout everything manually
+        for constraint in self.view.constraints {
+             constraint.isActive = false
+        }
+    }
+
+    override func viewWillLayoutSubviews() {
+        super.viewWillLayoutSubviews()
     }
 }
 
