@@ -21,12 +21,13 @@ class NextKeyboardButton : KeyboardButton {
     }
 
     override func handleTap(_ recognizer: UITapGestureRecognizer) {
-        self.playInputClick(soundId: self.modifierSoundId)
-        self.proxyDelegate.advanceToNextKeyboard()
+        if recognizer.state == .began {
+            self.playInputClick(soundId: self.modifierSoundId)
+            self.proxyDelegate.advanceToNextKeyboard()
+        }
     }
 
     @objc func handleLongPress(_ recognizer: UILongPressGestureRecognizer) {
         self.playInputClick(soundId: self.modifierSoundId)
-        print("Long press!!!")
     }
 }

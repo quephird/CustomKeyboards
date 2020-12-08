@@ -11,7 +11,9 @@ import UIKit
 /// Specialized class for the backspace button
 class ShiftButton : KeyboardButton {
     override func handleTap(_ recognizer: UITapGestureRecognizer) {
-        self.playInputClick(soundId: self.modifierSoundId)
-        self.proxyDelegate.toggleCase()
+        if recognizer.state == .began {
+            self.playInputClick(soundId: self.modifierSoundId)
+            self.proxyDelegate.toggleCase()
+        }
     }
 }

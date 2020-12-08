@@ -22,7 +22,9 @@ class ReturnButton : KeyboardButton {
     }
 
     override func handleTap(_ recognizer: UITapGestureRecognizer) {
-        self.playInputClick(soundId: self.modifierSoundId)
-        self.proxyDelegate.insertText(buttonText: "\n")
+        if recognizer.state == .began {
+            self.playInputClick(soundId: self.modifierSoundId)
+            self.proxyDelegate.insertText(buttonText: "\n")
+        }
     }
 }
