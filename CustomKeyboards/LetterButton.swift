@@ -28,9 +28,37 @@ class LetterButton : KeyboardButton {
         fatalError("init(coder:) has not been implemented")
     }
 
-    override func handleTap(_ recognizer: UITapGestureRecognizer) {
-        self.playInputClick(soundId: self.clickSoundId)
-        self.proxyDelegate.insertText(buttonText: self.buttonLabel.text!)
+    override func handleTap(_ recognizer: UIGestureRecognizer) {
+        if recognizer.state == .began {
+            // Popup key
+            self.frame.origin.y = self.frame.origin.y - self.frame.size.height
+            self.frame.size.height = self.frame.size.height * 2
+            self.frame.origin.x = self.frame.origin.x
+
+            // Move label up and make bigger
+            self.buttonLabel.translatesAutoresizingMaskIntoConstraints = true
+            self.removeConstraints(self.constraints)
+            self.buttonLabel.font = self.buttonLabel.font.withSize(20)
+            self.buttonLabel.removeConstraints(self.buttonLabel.constraints)
+            self.buttonLabel.topAnchor.constraint(equalTo: self.topAnchor, constant: 10).isActive = true
+            self.buttonLabel.centerXAnchor.constraint(equalTo: self.centerXAnchor).isActive = true
+            self.buttonLabel.translatesAutoresizingMaskIntoConstraints = false
+
+            self.playInputClick(soundId: self.clickSoundId)
+            self.proxyDelegate.insertText(buttonText: self.buttonLabel.text!)
+        } else if recognizer.state == .ended {
+            // Make key regular size again
+            self.frame.origin.y = self.frame.origin.y + self.frame.size.height / 2
+            self.frame.size.height = self.frame.size.height / 2
+
+            // Return label back to normal state
+            self.buttonLabel.translatesAutoresizingMaskIntoConstraints = true
+            self.buttonLabel.removeConstraints(self.buttonLabel.constraints)
+            self.buttonLabel.font = self.buttonLabel.font.withSize(14)
+            self.buttonLabel.centerYAnchor.constraint(equalTo: self.centerYAnchor).isActive = true
+            self.buttonLabel.centerXAnchor.constraint(equalTo: self.centerXAnchor).isActive = true
+            self.buttonLabel.translatesAutoresizingMaskIntoConstraints = false
+        }
     }
 
     func switchMode() {

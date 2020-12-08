@@ -24,8 +24,10 @@ class SpaceButton : KeyboardButton {
     }
 
     override func handleTap(_ recognizer: UITapGestureRecognizer) {
-        self.playInputClick(soundId: self.modifierSoundId)
-        self.proxyDelegate.insertText(buttonText: self.spaceText)
+        if recognizer.state == .began {
+            self.playInputClick(soundId: self.modifierSoundId)
+            self.proxyDelegate.insertText(buttonText: self.spaceText)
+        }
     }
 }
 

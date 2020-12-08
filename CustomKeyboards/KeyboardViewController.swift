@@ -23,22 +23,6 @@ class KeyboardViewController: UIInputViewController {
 
     func makeButtonRow(_ buttonKeys: [(String, String)]) -> [LetterButton] {
         let newButtons = buttonKeys.map { LetterButton($0, proxyDelegate: self) }
-        let additionalMargin = (self.keyboard.keyboardWidth - self.keyboard.leftMargin - self.keyboard.rightMargin)*(10.0-CGFloat(newButtons.count))/20.0
-        
-        for (index, button) in newButtons.enumerated() {
-            self.view.addSubview(button)
-            
-            button.heightAnchor.constraint(equalToConstant: self.keyboard.buttonHeight).isActive = true
-            if index == 0 {
-                button.leadingAnchor.constraint(equalTo: self.view.leadingAnchor, constant: keyboard.leftMargin+additionalMargin).isActive = true
-                button.widthAnchor.constraint(equalToConstant: self.keyboard.buttonWidth).isActive = true
-            } else {
-                button.leadingAnchor.constraint(equalTo: newButtons[index-1].trailingAnchor, constant: self.keyboard.horizontalSpaceBetweenButtons).isActive = true
-                button.widthAnchor.constraint(equalTo: newButtons[index-1].widthAnchor).isActive = true
-                button.topAnchor.constraint(equalTo: newButtons[index-1].topAnchor).isActive = true
-            }
-        }
-        
         return newButtons
     }
 
@@ -46,66 +30,94 @@ class KeyboardViewController: UIInputViewController {
         let letterButtonRows = letterButtonKeyRows.map { makeButtonRow($0) }
         self.letterButtons = Array(letterButtonRows.joined())
 
-        for (index, buttonRow) in letterButtonRows.enumerated() {
-            if index == 0 {
-                buttonRow[0].topAnchor.constraint(equalTo: self.view.topAnchor, constant: self.keyboard.topMargin).isActive = true
-            } else {
-                buttonRow[0].topAnchor.constraint(equalTo: letterButtonRows[index-1][0].bottomAnchor, constant: self.keyboard.verticalSpaceBetweenButtons).isActive = true
+        for (rowIndex, buttonRow) in letterButtonRows.enumerated() {
+            for (buttonIndex, button) in buttonRow.enumerated() {
+                // Note that we need to indent each key based on the _total_ number
+                // of keys in the row, not just its index, hence the extra accounting.
+                let x = self.keyboard.leftMargin +
+                    CGFloat(buttonIndex)*self.keyboard.horizontalSpaceBetweenButtons +
+                    CGFloat(buttonIndex)*self.keyboard.buttonWidth +
+                    CGFloat(10 - buttonRow.count)*0.5*self.keyboard.horizontalSpaceBetweenButtons +
+                    CGFloat(10 - buttonRow.count)*0.5*self.keyboard.buttonWidth
+                let y = self.keyboard.topMargin +
+                    CGFloat(rowIndex)*self.keyboard.verticalSpaceBetweenButtons +
+                    CGFloat(rowIndex)*self.keyboard.buttonHeight
+                let width = 1.0*self.keyboard.buttonWidth
+                let height = 1.0*self.keyboard.buttonHeight
+                button.frame = CGRect(x: x, y: y, width: width, height: height)
+                self.view.addSubview(button)
             }
         }
     }
 
     func makeShiftButton() {
         let shiftKey = ShiftButton(self.shiftButtonLabel, proxyDelegate: self)
-        let bottomAnchorConstant = keyboard.buttonHeight + 2*keyboard.verticalSpaceBetweenButtons
+        let x = self.keyboard.leftMargin
+        let y = self.keyboard.topMargin +
+            2.0*self.keyboard.buttonHeight +
+            2.0*self.keyboard.verticalSpaceBetweenButtons
+        let width = 1.0*self.keyboard.buttonHeight
+        let height = 1.0*self.keyboard.buttonHeight
+        shiftKey.frame = CGRect(x: x, y: y, width: width, height: height)
         self.view.addSubview(shiftKey)
-        shiftKey.heightAnchor.constraint(equalToConstant: self.keyboard.buttonHeight).isActive = true
-        // Backspace key is supposed to be square in portrait mode
-        shiftKey.widthAnchor.constraint(equalToConstant: keyboard.buttonHeight).isActive = true
-        shiftKey.leadingAnchor.constraint(equalTo: self.view.leadingAnchor, constant: keyboard.leftMargin).isActive = true
-        shiftKey.bottomAnchor.constraint(equalTo: self.view.bottomAnchor, constant: -bottomAnchorConstant).isActive = true
     }
 
     func makeBackspaceButton() {
         let backspace = BackspaceButton(self.deleteButtonLabel, proxyDelegate: self)
-        let bottomAnchorConstant = keyboard.buttonHeight + 2*keyboard.verticalSpaceBetweenButtons
+        let x = self.keyboard.leftMargin +
+            8.5*self.keyboard.buttonWidth +
+            9.0*self.keyboard.horizontalSpaceBetweenButtons
+        let y = self.keyboard.topMargin +
+            2.0*self.keyboard.buttonHeight +
+            2.0*self.keyboard.verticalSpaceBetweenButtons
+        let width = 1.0*self.keyboard.buttonHeight
+        let height = 1.0*self.keyboard.buttonHeight
+        backspace.frame = CGRect(x: x, y: y, width: width, height: height)
         self.view.addSubview(backspace)
-        backspace.heightAnchor.constraint(equalToConstant: self.keyboard.buttonHeight).isActive = true
-        // Backspace key is supposed to be square in portrait mode
-        backspace.widthAnchor.constraint(equalToConstant: keyboard.buttonHeight).isActive = true
-        backspace.trailingAnchor.constraint(equalTo: self.view.trailingAnchor, constant: -keyboard.rightMargin).isActive = true
-        backspace.bottomAnchor.constraint(equalTo: self.view.bottomAnchor, constant: -bottomAnchorConstant).isActive = true
     }
 
     func makeNextKeyboardButton() {
         let nextKeyboard = NextKeyboardButton("🌐", proxyDelegate: self)
-        let nextKeyboardMargin = 1.5*keyboard.buttonWidth + keyboard.horizontalSpaceBetweenButtons
+        let x = self.keyboard.leftMargin +
+            1.0*self.keyboard.buttonHeight +
+            1.0*self.keyboard.horizontalSpaceBetweenButtons
+        let y = self.keyboard.topMargin +
+            3.0*self.keyboard.buttonHeight +
+            3.0*self.keyboard.verticalSpaceBetweenButtons
+        let width = 1.0*self.keyboard.buttonHeight
+        let height = 1.0*self.keyboard.buttonHeight
+        nextKeyboard.frame = CGRect(x: x, y: y, width: width, height: height)
         self.view.addSubview(nextKeyboard)
-        nextKeyboard.heightAnchor.constraint(equalToConstant: self.keyboard.buttonHeight).isActive = true
-        nextKeyboard.leadingAnchor.constraint(equalTo: self.view.leadingAnchor, constant: nextKeyboardMargin).isActive = true
-        // Next keyboard key is supposed to be square in portrait mode
-        nextKeyboard.widthAnchor.constraint(equalToConstant: keyboard.buttonHeight).isActive = true
-        nextKeyboard.bottomAnchor.constraint(equalTo: self.view.bottomAnchor, constant: -keyboard.bottomMargin).isActive = true
-    }
+   }
 
     func makeSpaceButton() {
         let spacebar = SpaceButton(self.spaceButtonLabel, spaceText: self.spaceButtonText, proxyDelegate: self)
-        let spacebarLeftMargin = 3.5*keyboard.buttonWidth + 3*keyboard.horizontalSpaceBetweenButtons + keyboard.leftMargin
-        let spacebarRightMargin = 3*keyboard.buttonWidth + keyboard.horizontalSpaceBetweenButtons + keyboard.leftMargin
+        let x = self.keyboard.leftMargin +
+            3.5*self.keyboard.buttonWidth +
+            3.5*self.keyboard.horizontalSpaceBetweenButtons
+        let y = self.keyboard.topMargin +
+            3.0*self.keyboard.buttonHeight +
+            3.0*self.keyboard.verticalSpaceBetweenButtons
+        let width = 4.0*self.keyboard.buttonWidth +
+            3.0*self.keyboard.horizontalSpaceBetweenButtons
+        let height = 1.0*self.keyboard.buttonHeight
+        spacebar.frame = CGRect(x: x, y: y, width: width, height: height)
         self.view.addSubview(spacebar)
-        spacebar.heightAnchor.constraint(equalToConstant: self.keyboard.buttonHeight).isActive = true
-        spacebar.leadingAnchor.constraint(equalTo: self.view.leadingAnchor, constant: spacebarLeftMargin).isActive = true
-        spacebar.trailingAnchor.constraint(equalTo: self.view.trailingAnchor, constant: -spacebarRightMargin).isActive = true
-        spacebar.bottomAnchor.constraint(equalTo: self.view.bottomAnchor, constant: -self.keyboard.bottomMargin).isActive = true
     }
 
     func makeReturnButton() {
         let returnKey = ReturnButton(self.returnButtonLabel, proxyDelegate: self)
+        let x = self.keyboard.leftMargin +
+            7.5*self.keyboard.buttonWidth +
+            7.5*self.keyboard.horizontalSpaceBetweenButtons
+        let y = self.keyboard.topMargin +
+            3.0*self.keyboard.verticalSpaceBetweenButtons +
+            3.0*self.keyboard.buttonHeight
+        let width = 2.5*self.keyboard.buttonWidth +
+            1.0*self.keyboard.horizontalSpaceBetweenButtons
+        let height = 1.0*self.keyboard.buttonHeight
+        returnKey.frame = CGRect(x: x, y: y, width: width, height: height)
         self.view.addSubview(returnKey)
-        returnKey.heightAnchor.constraint(equalToConstant: self.keyboard.buttonHeight).isActive = true
-        returnKey.widthAnchor.constraint(equalToConstant: 3*self.keyboard.buttonWidth).isActive = true
-        returnKey.trailingAnchor.constraint(equalTo: self.view.trailingAnchor, constant: -self.keyboard.rightMargin).isActive = true
-        returnKey.bottomAnchor.constraint(equalTo: self.view.bottomAnchor, constant: -self.keyboard.bottomMargin).isActive = true
     }
 
     func makeKeyboard() {
@@ -121,7 +133,17 @@ class KeyboardViewController: UIInputViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+
+        // Do any additional setup after loading the view, typically from a nib.
         self.makeKeyboard()
+        // This disables all autolayout because we want to layout everything manually
+        for constraint in self.view.constraints {
+             constraint.isActive = false
+        }
+    }
+
+    override func viewWillLayoutSubviews() {
+        super.viewWillLayoutSubviews()
     }
 }
 

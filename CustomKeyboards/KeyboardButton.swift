@@ -33,12 +33,15 @@ class KeyboardButton : UIView {
 
         self.buttonLabel.translatesAutoresizingMaskIntoConstraints = false
         self.buttonLabel.text = labelText
+        self.buttonLabel.font = self.buttonLabel.font.withSize(14)
+        self.layer.borderWidth = 1.0
+        self.layer.borderColor =  UIColor.init(white: 0.8, alpha: 1).cgColor
         self.addSubview(self.buttonLabel)
         self.buttonLabel.centerXAnchor.constraint(equalTo: self.centerXAnchor).isActive = true
         self.buttonLabel.centerYAnchor.constraint(equalTo: self.centerYAnchor).isActive = true
         
         self.backgroundColor = UIColor.init(white: 1, alpha: 1)
-        self.translatesAutoresizingMaskIntoConstraints = false
+        self.translatesAutoresizingMaskIntoConstraints = true
         self.layer.cornerRadius = 4.0
         self.layer.shadowColor = UIColor.black.cgColor
         self.layer.shadowOpacity = 1.0
@@ -46,7 +49,10 @@ class KeyboardButton : UIView {
         self.layer.shadowOffset = CGSize(width: 0.0, height: 1.0)
 
         self.isUserInteractionEnabled = true
-        self.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(handleTap(_:))))
+        // We use the long press recognizer because it is supposedly more responsive
+        let tap = UILongPressGestureRecognizer(target: self, action: #selector(handleTap(_:)))
+        tap.minimumPressDuration = 0
+        self.addGestureRecognizer(tap)
     }
 
     @objc func handleTap(_ recognizer: UITapGestureRecognizer) {

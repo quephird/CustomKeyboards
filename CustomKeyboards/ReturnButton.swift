@@ -12,6 +12,8 @@ import UIKit
 class ReturnButton : KeyboardButton {
     override init(_ labelText: String, proxyDelegate: KeyboardViewControllerProxy) {
         super.init(labelText, proxyDelegate: proxyDelegate)
+        self.backgroundColor = UIColor.init(white: 0.8, alpha: 1)
+        self.layer.borderWidth = 0.0
         let defaultFontSize = self.buttonLabel.font.pointSize
         self.buttonLabel.font = self.buttonLabel.font.withSize(0.7*defaultFontSize)
     }
@@ -22,7 +24,12 @@ class ReturnButton : KeyboardButton {
     }
 
     override func handleTap(_ recognizer: UITapGestureRecognizer) {
-        self.playInputClick(soundId: self.modifierSoundId)
-        self.proxyDelegate.insertText(buttonText: "\n")
+        if recognizer.state == .began {
+            self.backgroundColor = UIColor.init(white: 1, alpha: 1)
+            self.playInputClick(soundId: self.modifierSoundId)
+            self.proxyDelegate.insertText(buttonText: "\n")
+        } else if recognizer.state == .ended {
+            self.backgroundColor = UIColor.init(white: 0.8, alpha: 1)
+        }
     }
 }
