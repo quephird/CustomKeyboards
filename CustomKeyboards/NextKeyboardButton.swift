@@ -12,6 +12,8 @@ import UIKit
 class NextKeyboardButton : KeyboardButton {
     override init(_ labelText: String, proxyDelegate: KeyboardViewControllerProxy) {
         super.init(labelText, proxyDelegate: proxyDelegate)
+        self.backgroundColor = UIColor.init(white: 0.8, alpha: 1)
+        self.layer.borderWidth = 0.0
         self.addGestureRecognizer(UILongPressGestureRecognizer(target: self, action: #selector(handleLongPress(_:))))
     }
 
@@ -22,8 +24,11 @@ class NextKeyboardButton : KeyboardButton {
 
     override func handleTap(_ recognizer: UITapGestureRecognizer) {
         if recognizer.state == .began {
+            self.backgroundColor = UIColor.init(white: 1, alpha: 1)
             self.playInputClick(soundId: self.modifierSoundId)
             self.proxyDelegate.advanceToNextKeyboard()
+        } else if recognizer.state == .ended {
+            self.backgroundColor = UIColor.init(white: 0.8, alpha: 1)
         }
     }
 

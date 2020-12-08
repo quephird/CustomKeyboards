@@ -113,7 +113,8 @@ class KeyboardViewController: UIInputViewController {
         let y = self.keyboard.topMargin +
             3.0*self.keyboard.verticalSpaceBetweenButtons +
             3.0*self.keyboard.buttonHeight
-        let width = 3.0*self.keyboard.buttonWidth
+        let width = 2.5*self.keyboard.buttonWidth +
+            1.0*self.keyboard.horizontalSpaceBetweenButtons
         let height = 1.0*self.keyboard.buttonHeight
         returnKey.frame = CGRect(x: x, y: y, width: width, height: height)
         self.view.addSubview(returnKey)
