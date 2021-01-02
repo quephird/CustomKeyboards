@@ -21,9 +21,14 @@ class LetterButton : KeyboardButton {
         self.letters = letters
         self.buttonMode = ButtonMode.lowercase
         super.init(letters.0, proxyDelegate: proxyDelegate)
+
+        if #available(iOS 13, *) {
+            self.backgroundColor = self.traitCollection.userInterfaceStyle == .dark ? UIColor.lightGray : UIColor.white
+        } else {
+            self.backgroundColor = UIColor.white
+        }
     }
 
-    // Uuuugghhhhhhhh XCode needs this initializer
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
@@ -31,8 +36,8 @@ class LetterButton : KeyboardButton {
     override func handleTap(_ recognizer: UIGestureRecognizer) {
         if recognizer.state == .began {
             // Popup key
-            self.frame.origin.y = self.frame.origin.y - self.frame.size.height
-            self.frame.size.height = self.frame.size.height * 2
+            self.frame.origin.y = self.frame.origin.y - self.frame.size.height*1.5
+            self.frame.size.height = self.frame.size.height * 2.5
             self.frame.origin.x = self.frame.origin.x
 
             // Move label up and make bigger
@@ -48,8 +53,8 @@ class LetterButton : KeyboardButton {
             self.proxyDelegate.insertText(buttonText: self.buttonLabel.text!)
         } else if recognizer.state == .ended {
             // Make key regular size again
-            self.frame.origin.y = self.frame.origin.y + self.frame.size.height / 2
-            self.frame.size.height = self.frame.size.height / 2
+            self.frame.origin.y = self.frame.origin.y + self.frame.size.height*0.6
+            self.frame.size.height = self.frame.size.height / 2.5
 
             // Return label back to normal state
             self.buttonLabel.translatesAutoresizingMaskIntoConstraints = true

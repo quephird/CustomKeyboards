@@ -12,7 +12,13 @@ import UIKit
 class ShiftButton : KeyboardButton {
     override init(_ labelText: String, proxyDelegate: KeyboardViewControllerProxy) {
         super.init(labelText, proxyDelegate: proxyDelegate)
-        self.backgroundColor = UIColor.init(white: 0.8, alpha: 1)
+
+        if #available(iOS 13, *) {
+            self.backgroundColor = self.traitCollection.userInterfaceStyle == .dark ? UIColor.darkGray : UIColor.gray
+        } else {
+            self.backgroundColor = UIColor.gray
+        }
+
         self.layer.borderWidth = 0.0
     }
 
@@ -26,7 +32,11 @@ class ShiftButton : KeyboardButton {
             self.playInputClick(soundId: self.modifierSoundId)
             self.proxyDelegate.toggleCase()
         } else if recognizer.state == .ended {
-            self.backgroundColor = UIColor.init(white: 0.8, alpha: 1)
+            if #available(iOS 13, *) {
+                self.backgroundColor = self.traitCollection.userInterfaceStyle == .dark ? UIColor.darkGray : UIColor.gray
+            } else {
+                self.backgroundColor = UIColor.gray
+            }
         }
     }
 }
