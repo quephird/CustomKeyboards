@@ -12,7 +12,13 @@ import UIKit
 class BackspaceButton : KeyboardButton {
     override init(_ labelText: String, proxyDelegate: KeyboardViewControllerProxy) {
         super.init(labelText, proxyDelegate: proxyDelegate)
-        self.backgroundColor = UIColor.init(white: 0.8, alpha: 1)
+
+        if #available(iOS 13, *) {
+            self.backgroundColor = self.traitCollection.userInterfaceStyle == .dark ? UIColor.darkGray : UIColor.gray
+        } else {
+            self.backgroundColor = UIColor.gray
+        }
+
         self.layer.borderWidth = 0.0
     }
 
@@ -22,11 +28,21 @@ class BackspaceButton : KeyboardButton {
 
     override func handleTap(_ recognizer: UITapGestureRecognizer) {
         if recognizer.state == .began {
+            if #available(iOS 13, *) {
+                self.backgroundColor = self.traitCollection.userInterfaceStyle == .dark ? UIColor.white : UIColor.gray
+            } else {
+                self.backgroundColor = UIColor.gray
+            }
+
             self.backgroundColor = UIColor.init(white: 1, alpha: 1)
             self.playInputClick(soundId: self.deleteSoundId)
             self.proxyDelegate.deleteText()
         } else if recognizer.state == .ended {
-            self.backgroundColor = UIColor.init(white: 0.8, alpha: 1)
+            if #available(iOS 13, *) {
+                self.backgroundColor = self.traitCollection.userInterfaceStyle == .dark ? UIColor.darkGray : UIColor.gray
+            } else {
+                self.backgroundColor = UIColor.gray
+            }
         }
     }
 }
